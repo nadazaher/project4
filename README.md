@@ -18,6 +18,14 @@ This app will help people in Egypt create their events - mainly weddings and eng
 ![img_8939](https://media.git.generalassemb.ly/user/14908/files/ddef5626-b02a-11e8-9bfb-4c91b8dae440)
 ![img_9218](https://media.git.generalassemb.ly/user/14908/files/deca52d0-b02a-11e8-968b-047756769240)
 
+# Timeline
+1) START WITH EVENTSERVICE/COMMENTS
+-	 Comments belong to event
+-	Event has many comments
+-	Show all event services – always with comments
+2) THEN EVENTSSERVICE/USER
+3) THEN EVENTSERVICE/LIKES
+
 # Technologies Used
 - Backend: Rails
 - Database: PSQL
