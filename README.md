@@ -28,5 +28,7 @@ Auth: TBD
 - Share a service you like with a friend via message/email
 - Admin to control service posts if fake
 - Rating of services instead of just likes
+- Services within services
+- More detailed price listings and filters
 - Responsive design 
 - Log in with Facebook
