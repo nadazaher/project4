@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- 
+
+Comment.destroy_all
+EventService.destroy_all
+
 EventService.create([
 { 
     type_of_service: "DJ",
@@ -23,6 +26,18 @@ EventService.create([
     description: "Garden right infront of the pyramids. This is a dream for foreignors.",
     link: "https://weddinghubeg.com/wp-content/uploads/2017/10/Mena-House-Venues-Wedding-Hub-EG-Cairo-Egypt-2.jpg",
     avg_price: "100,000 LE",
+
+}
+])
+
+Comment.create([
+    { 
+    event_service_id: 1 , 
+    content:"Best DJ ever!",
+},
+{ 
+    event_service_id: 2 ,
+    content: "Best view of pyramids as backdrop",
 
 }
 ])
