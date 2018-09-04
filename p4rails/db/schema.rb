@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2018_09_04_183205) do
   create_table "event_services", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type_of_service"
     t.string "host"
     t.string "contact_info"
     t.string "description"
     t.string "link"
     t.string "avg_price"
-    t.string "type_of_service"
   end
 
 end
