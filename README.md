@@ -19,10 +19,10 @@ This app will help people in Egypt create their events - mainly weddings and eng
 ![img_9218](https://media.git.generalassemb.ly/user/14908/files/deca52d0-b02a-11e8-968b-047756769240)
 
 # Technologies Used
-Backend: Rails
-Database: PSQL
-Frontend: React
-Auth: TBD
+- Backend: Rails
+- Database: PSQL
+- Frontend: React
+- Auth: TBD
 
 # Post MVP
 - Share a service you like with a friend via message/email
