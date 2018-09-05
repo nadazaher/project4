@@ -3,3 +3,37 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.LandingContent {
+  padding: 30px;
+   margin-top: 80px;
+}
+
+.grid-container {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 50px;
+  grid-column-gap: 24px;
+  align-self: center;
+  padding-bottom: 50px;
+}
+
+.grid-item {
+  background-color: white;
+  padding: 20px 10px 20px 10px;
+  min-width: 270px;
+  max-width: 320px;
+  text-align: center;
+  color: black;
+  font-size: 32px;
+  border: solid black 2px;
+  box-shadow:black 3px 3px 3px;
+  cursor: pointer;
+}
+
+.homepic {
+  width: 300px;
+  height: 180px;
+  padding: 10px;
+}
