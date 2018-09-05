@@ -1,6 +1,6 @@
 class EventServicesController < ApplicationController
-    # before_action :authenticate_user
-    # before_action :set_event_service, only: [:create, :update, :destroy]
+    before_action :authenticate_user
+    before_action :set_event_service, only: [:create, :update, :destroy]
     
     def index
         render json: { event_service: EventService.all }
