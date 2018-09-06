@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
+import LoggedInLandingPage from './components/LoggedInLandingPage';
+import LogIn from './components/LogIn';
 
 
 import getEventServices from './services/api.js';
@@ -37,34 +38,10 @@ componentDidMount () {
     return (
       <div>
         <Header></Header>
+        <LoggedInLandingPage></LoggedInLandingPage>
         <LandingPage></LandingPage>
-      <form>
-          <label htmlFor="email">Email: </label>
-          <br />
-          <input
-            name="email"
-            id="email"
-            type="email"
-          />
-      <br />
-      <br />
-            <label htmlFor="password">Password:</label>
-            <br />
-            <input
-              name="password"
-              id="password"
-              type="password"
-            />
-      </form> 
-      <br />
-      <div>
-              <button
-                onClick={this.login}
-              >
-                  Login
-              </button>
-             
-        </div>
+        <LogIn></LogIn>
+      
     </div>
   );
 }

@@ -5,11 +5,9 @@ function Header(props) {
     return (
       <div>
         {/* Start Header */}
-        <div className="hero-head">
-
-          <header className="navbar is-info newheader">
+          <nav className="navbar is-warning is-transparent is-fixed-top">
             <div className="container ">
-              <div className="navbar-brand ">
+              <div className="navbar-start ">
                 <a className="navbar-item ">
                   <h1 className="title is-size-2  has-text-black"
                     onClick={() => props.handleLinks('landing page')}>Event Services</h1>
@@ -55,8 +53,7 @@ function Header(props) {
 
               </div>
     </div>
-    </header>
-    </div>
+    </nav>
     </div>
   );
 }

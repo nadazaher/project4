@@ -32,8 +32,41 @@ body {
   cursor: pointer;
 }
 
+.createbutton {
+  background-color: white;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  border: solid black 2px;
+  box-shadow:black 3px 3px 3px;
+  cursor: pointer;
+  margin-top: 100px;
+}
+
 .homepic {
   width: 300px;
   height: 180px;
   padding: 10px;
 }
+
+.createform {
+  margin: 30px;
+}
+
+.checkbox {
+  padding: 2px;
+  margin: 2px;
+}
+
+.formtitle {
+  font-size: 25px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+nav {
+  max-height: 70px;
+}
+
