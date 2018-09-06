@@ -1,10 +1,15 @@
 class EventServicesController < ApplicationController
-    before_action :authenticate_user, only: [:create, :update, :destroy]
+    # before_action :authenticate_user, only: [:create, :update, :destroy]
     
 #    before_action :set_event_service,
 
     def index
-        render json: { event_service: EventService.all }
+    if (params[:user_id])
+        @event_services = User.find(params[:user_id]).event_services
+      else
+        @event_services = EventService.all
+      end
+      render json: { event_services: @event_services}
     end
 
     def show
