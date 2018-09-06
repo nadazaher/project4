@@ -11,7 +11,7 @@ class App extends Component {
     super();
 
     this.state = {
-      EventServices: [],
+      eventServices: [],
       email: '',
       password: '',
       isLoggedIn: null,
@@ -24,7 +24,8 @@ class App extends Component {
 
 componentDidMount () {
   getEventServices()
-  // .then(data => this.setState({ EventServices: data.EventServices }));
+  .then(data => console.log(data))
+  // this.setState({ eventServices: data.eventServices }));
 
   this.isLoggedIn()
 }

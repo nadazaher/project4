@@ -7,8 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Comment.destroy_all
 EventService.destroy_all
+Comment.destroy_all
+Favorite.destroy_all
+
+User.create(
+    {email: "user@test.com",
+    password: "123456",
+    password_confirmation: "123456"
+    }
+)
+
 
 EventService.create([
 { 
@@ -18,6 +27,7 @@ EventService.create([
     description: "Been in business for 10 years. Played at venues and weddings. Popular for variety",
     link: "https://i1.sndcdn.com/avatars-000199714306-tk3bdx-t500x500.jpg",
     avg_price: "15,000 LE",
+    user_id: 1
 
 },
 { 
@@ -27,6 +37,7 @@ EventService.create([
     description: "Garden right infront of the pyramids. This is a dream for foreignors.",
     link: "https://weddinghubeg.com/wp-content/uploads/2017/10/Mena-House-Venues-Wedding-Hub-EG-Cairo-Egypt-2.jpg",
     avg_price: "100,000 LE",
+    user_id: 1
 
 }
 ])
@@ -34,19 +45,25 @@ EventService.create([
 Comment.create([
     { 
     event_service_id: 1 , 
+    user_id: 1,
     content:"Best DJ ever!",
 },
 { 
     event_service_id: 2 ,
+    user_id: 1,
     content: "Best view of pyramids as backdrop",
 
 }
 ])
 
-User.create(
-    {email: "user@test.com",
-    password: "123456",
-    password_confirmation: "123456"
-    }
-)
+Favorite.create([
+    { 
+    event_service_id: 1 , 
+    user_id: 1
+},
+{ 
+    event_service_id: 2 ,
+    user_id: 1
 
+}
+])

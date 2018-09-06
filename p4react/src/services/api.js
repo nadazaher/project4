@@ -5,11 +5,8 @@ export function getEventServices() {
     const init = { 
       headers: {"Authorization": `Bearer ${jwt}`}
     }
-    fetch(`${BASE_URL}/event_services`, init)
+    return fetch(`${BASE_URL}/event_services`, init)
     .then(res => res.json())
-    .then(data => this.setState({
-      EventServices: data,
-    }))
     .catch(err => err)
   }
     
