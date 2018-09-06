@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user, only: [:create, :update, :destroy]
+
     def index
         if (params[:event_service_id])
           @comments = EventService.find(params[:event_service_id]).comments

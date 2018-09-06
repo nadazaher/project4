@@ -1,16 +1,20 @@
 class EventServicesController < ApplicationController
-    # before_action :authenticate_user, only: [:create, :update, :destroy]
+    before_action :authenticate_user, only: [:create, :update, :destroy]
     
 #    before_action :set_event_service,
 
     def index
-    if (params[:user_id])
+    if (params[:type_of_service])
+        @event_services = EventService.where(type_of_service: params[type_of_service])
+    elsif (params[:user_id])
         @event_services = User.find(params[:user_id]).event_services
       else
         @event_services = EventService.all
       end
       render json: { event_services: @event_services}
     end
+
+    #search and find active record - event_services.music - then
 
     def show
         id = params[:id]

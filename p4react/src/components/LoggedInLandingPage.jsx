@@ -4,7 +4,7 @@ import CreateES from './CreateES';
 function LoggedInLandingPage(props) {
     return (
 <div>
-<center><button class="createbutton">Create New Service</button></center>
+<center><button className="createbutton">Create New Service</button></center>
 
   {/* ## this should actually just be a create button that links to the CreateES page - lets make a modal */}
 <CreateES></CreateES>

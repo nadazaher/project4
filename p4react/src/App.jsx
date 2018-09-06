@@ -24,8 +24,7 @@ class App extends Component {
 
 componentDidMount () {
   getEventServices()
-  .then(data => console.log(data))
-  // this.setState({ eventServices: data.eventServices }));
+  .then(data => this.setState({ eventServices: data.event_services }));
 
   this.isLoggedIn()
 }
@@ -39,7 +38,7 @@ isLoggedIn() {
 }
 
 handleLogIn(email, password) {
-  userLogin({ "email": email, "password": password })
+  userLogin({ "email": email, "password": password})
   .then(res => localStorage.setItem("jwt", res.jwt))
   .then(() => this.setState({
     isLoggedIn: true,
@@ -94,7 +93,7 @@ logout() {
           </form>
           <br />
 
-          <button onClick={this.handleLogIn}>
+          <button onClick={(() => this.handleLogIn(this.state.email, this.state.password))}>
           Login
           </button>
 
