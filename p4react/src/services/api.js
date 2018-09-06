@@ -1,9 +1,28 @@
 const BASE_URL = process.env.REACT_APP_API_URL
 
-function getEventServices() {
-return fetch(BASE_URL +  '/event_services')
-.then(resp => resp.json())
-.then(resp => console.log(resp))
-}
+export function getEventServices() {
+    const jwt = localStorage.getItem("jwt")
+    const init = { 
+      headers: {"Authorization": `Bearer ${jwt}`}
+    }
+    fetch(`${BASE_URL}/event_services`, init)
+    .then(res => res.json())
+    .then(data => this.setState({
+      EventServices: data,
+    }))
+    .catch(err => err)
+  }
+    
 
-export default getEventServices;
+export function userLogin(email,password) {
+    const url = `${BASE_URL}/user_token`;
+    const body = {"auth": {"email": email, "password": password} }
+    const init = { method: 'POST',
+                   headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                   mode: 'cors'
+                //    body: JSON.stringify(body),
+                   }
+    return fetch(url, init)
+    .then(res => res.json())
+    .catch(err => console.log(err))
+  }
