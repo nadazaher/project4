@@ -1,5 +1,5 @@
 class EventServicesController < ApplicationController
-    before_action :authenticate_user, only: [:create, :update, :destroy]
+    # before_action :authenticate_user, only: [:create, :update, :destroy]
     
 #    before_action :set_event_service,
 

@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-    before_action :authenticate_user, only: [:create, :update, :destroy]
+    # before_action :authenticate_user, only: [:create, :update, :destroy]
 
     def index
         if (params[:event_service_id])

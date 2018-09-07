@@ -18,13 +18,14 @@ function Header(props) {
 
 
                   {
-                  props.loginInfo
+                  props.isLoggedIn
+                  // props.isLoggedIn
                     ?
                     (
                       <div className="navbar-item has-dropdown is-hoverable"
                       >
                         <a className="navbar-link has-text-black">
-                          <FontAwesomeIcon icon="user" />&nbsp;{props.userInfo.username}
+                          <FontAwesomeIcon icon="user" />
                         </a>
                         <div className="navbar-dropdown is-right">
                           <a className="navbar-item has-text-black"

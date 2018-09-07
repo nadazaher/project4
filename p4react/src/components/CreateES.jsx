@@ -9,7 +9,6 @@ class CreateES extends Component {
           hostname: '',
           email: '',
           telephone: '',
-          password: '',
           avgprice: '',
           usefullinks: '',
           checkbox: false,
@@ -159,8 +158,21 @@ return (
 
 <div className="field is-grouped">
 <div className="control">
-  <button className="button is-primary">Submit</button>
+  <button className="button is-primary" onClick={(e) => {
+    console.log("nada")
+            this.props.createEventService({
+              hostname: this.state.hostname,
+              email: this.state.email,
+              telephone: this.state.telephone,
+              avgprice: this.state.avgprice,
+              usefullinks: this.state.usefullinks,
+              checkbox: this.state.checkbox,
+              selectdropdown: this.state.selectdropdown,
+              description: this.state.description
+            })}}>Create
+            </button>
 </div>
+
 <div className="control">
   <button className="button is-text" onClick={() => this.props.toggleModal('createES_page')}>Cancel</button>
 

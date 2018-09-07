@@ -10,6 +10,51 @@ export function getEventServices() {
         .catch(err => err)
 }
 
+export function saveEventService(EventService) {
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(EventService),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    
+    // need ,opts for anything thats not GET 
+    return fetch(`${BASE_URL}/event_services`, opts)
+    .then(resp => resp.json())
+    .catch(err => {
+      throw Error(err);
+    });
+  }
+
+  export function modifyEventService(EventService) {
+    const opts = {
+      method: 'PUT',
+      body: JSON.stringify(EventService),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    
+    return fetch(`${BASE_URL}/event_service/${EventService.id}`, opts)
+    .then(resp => resp.json())
+    .catch(err => {
+      throw Error(err);
+    });
+  }
+  
+
+  export function destroyEventService(EventService) {
+    const opts = {
+      method: 'DELETE'
+    }
+    
+    return fetch(`${BASE_URL}/event_service/${EventService}`, opts)
+    .catch(err => {
+      throw Error(err);
+    });
+  }
+
 
 export function userLogin(loginInfo) {
     const url = `${BASE_URL}/user_token`;
@@ -22,13 +67,14 @@ export function userLogin(loginInfo) {
     }
     return fetch(url, init)
         .then(res => res.json())
+        .then(res => localStorage.setItem("jwt", res.jwt))
         .catch(err => console.log(err))
 }
 
 export function userRegister(loginInfo) {
-    
-    const url = `${BASE_URL}/user_token`;
-    const body = { "auth": loginInfo }
+
+    const url = `${BASE_URL}/users`;
+    const body = { "user": loginInfo }
     const init = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -37,5 +83,6 @@ export function userRegister(loginInfo) {
     }
     return fetch(url, init)
         .then(res => res.json())
+        .then(userLogin(loginInfo))
         .catch(err => console.log(err))
 }

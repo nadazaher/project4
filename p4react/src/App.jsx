@@ -4,8 +4,10 @@ import LandingPage from './components/LandingPage';
 import LoggedInLandingPage from './components/LoggedInLandingPage';
 import LogIn from './components/LogIn';
 import Register from './components/Register';
+import ESbyCategory from './components/ESbyCategory';
+// import EventService from './components/EventService';
 
-import { userLogin, getEventServices, userRegister } from './services/api.js';
+import { userLogin, getEventServices, userRegister, saveEventService } from './services/api.js';
 
 class App extends Component {
   constructor() {
@@ -16,7 +18,7 @@ class App extends Component {
       login_page: "modal",
       email: '',
       password: '',
-      isLoggedIn: null,
+      isLoggedIn: false,
       register_page: "modal",
       createES_page: "modal"
 
@@ -27,7 +29,8 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleLogIn = this.handleLogIn.bind(this)
     this.toggleModal = this.toggleModal.bind(this)
-    this.handleRegiste = this.handleRegister.bind(this)
+    this.handleRegister = this.handleRegister.bind(this)
+    this.createEventService = this.createEventService.bind(this)
   }
 // Do i move isLoggedIn to log in form
 
@@ -48,20 +51,16 @@ isLoggedIn() {
 
 handleLogIn(email, password) {
   userLogin({ "email": email, "password": password})
-  .then(res => localStorage.setItem("jwt", res.jwt))
   .then(() => this.setState({
     isLoggedIn: true,
-  }))
+  })
+)
   .then(() => getEventServices())
 }
 
 handleRegister(email, password) {
   userRegister({ "email": email, "password": password})
-  .then(res => window.localStorage.setItem("jwt", res.jwt))
-  .then(() => this.setState({
-    isLoggedIn: true,
-  }))
-  .then(() => getEventServices())
+  .then(()=> this.handleLogIn( email, password ))
 }
 
 
@@ -91,16 +90,26 @@ toggleModal(modal) {
     })
 }
 
+createEventService(EventService) {
+  saveEventService(EventService)
+    .then(data => getEventServices())
+    .then(data => {
+      this.setState({ eventServices: data.event_services });
+    });
+}
+
 
   render() {
 
     return (
       <div>
+        {/* <EventService></EventService> */}
         <LogIn login={this.state.login_page} toggleModal={this.toggleModal} handleLogIn={this.handleLogIn}/>
-        <Header toggleModal={this.toggleModal}/>
-        <LoggedInLandingPage createEV={this.state.createES_page} toggleModal={this.toggleModal}/>
-        <LandingPage></LandingPage>
+        <Header toggleModal={this.toggleModal} isLoggedIn={this.state.isLoggedIn} />
+        <LoggedInLandingPage createEV={this.state.createES_page} toggleModal={this.toggleModal} createEventService={this.createEventService}/>
+        <LandingPage toggleModal={this.toggleModal}/>
         <Register register={this.state.register_page} toggleModal={this.toggleModal} handleRegister={this.handleRegister}/>
+        <ESbyCategory/>
       
     </div>
   );

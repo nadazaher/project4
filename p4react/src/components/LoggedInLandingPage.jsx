@@ -6,7 +6,7 @@ function LoggedInLandingPage(props) {
 <div>
 <center><button className="createbutton" onClick={() => props.toggleModal('createES_page')}>Create New Service</button></center>
 
- <CreateES createES={props.createEV} toggleModal={props.toggleModal}
+ <CreateES createES={props.createEV} toggleModal={props.toggleModal} createEventService={props.createEventService}
  /> 
         <div>
             <div className="LandingContent">
