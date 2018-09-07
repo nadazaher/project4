@@ -18,7 +18,7 @@ function Header(props) {
 
 
                   {
-                  props.userInfo
+                  props.loginInfo
                     ?
                     (
                       <div className="navbar-item has-dropdown is-hoverable"
@@ -43,7 +43,7 @@ function Header(props) {
                     )
                     :
                     (
-                      <span className="navbar-item" onClick={() => props.handleLinks('login page')}>
+                      <span className="navbar-item" onClick={() => props.toggleModal('login_page')}>
                         <a className="button is-light has-text-black is-size-4">
                           <span>Login</span>
                         </a>

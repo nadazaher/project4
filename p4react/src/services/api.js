@@ -24,3 +24,18 @@ export function userLogin(loginInfo) {
         .then(res => res.json())
         .catch(err => console.log(err))
 }
+
+export function userRegister(loginInfo) {
+    
+    const url = `${BASE_URL}/user_token`;
+    const body = { "auth": loginInfo }
+    const init = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        mode: 'cors',
+        body: JSON.stringify(body),
+    }
+    return fetch(url, init)
+        .then(res => res.json())
+        .catch(err => console.log(err))
+}

@@ -3,6 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function CreateES(props) {
     return (
+
+      <div className={this.props.createES}>
+          <div className="modal-background"></div>
+          <div className="modal-card">
+            <header className="modal-card-head">
+            <p className="modal-card-title">Add New Event Service</p>
+            <FontAwesomeIcon icon={["fas", "times"]} onClick={() => this.props.toggleModal('createES_page')}/>
+              </header>
+              <section className="modal-card-body">
+              <div>
+
         <div className="createform">
         <h1 className="formtitle"> ADD YOUR SERVICE</h1>
 
@@ -103,6 +114,10 @@ function CreateES(props) {
 <div className="control">
   <button className="button is-text">Cancel</button>
 </div>
+</div>
+</div>
+</div>
+</section>
 </div>
 </div>
 
