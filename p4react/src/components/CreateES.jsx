@@ -1,8 +1,52 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function CreateES(props) {
-    return (
+class CreateES extends Component {
+  constructor(props) {
+      super(props);
+
+      this.state = {
+          hostname: '',
+          email: '',
+          telephone: '',
+          password: '',
+          avgprice: '',
+          usefullinks: '',
+          checkbox: false,
+          selectdropdown: 'Select Dropdown',
+          description: ''
+      };
+
+      this.handleChange = this.handleChange.bind(this);
+      this.toggle = this.toggle.bind(this);
+      this.handleInputChange=this.handleInputChange.bind(this);
+  }
+
+  handleChange(evt) {
+    const { name, value } = evt.target;
+    this.setState({
+        [name]: value,
+    });
+}
+
+toggle(evt) {
+    evt.preventDefault();
+    this.props.toggle('createES');
+}
+
+
+handleInputChange(event) {
+  const target = event.target;
+  const value = target.type === 'checkbox' ? target.checked : target.value;
+  const name = target.name;
+
+  this.setState({
+    [name]: value
+  });
+}
+
+render () {
+return (
 
       <div className={this.props.createES}>
           <div className="modal-background"></div>
@@ -15,7 +59,7 @@ function CreateES(props) {
               <div>
 
         <div className="createform">
-        <h1 className="formtitle"> ADD YOUR SERVICE</h1>
+
 
 <div className="field">
   <div className="field">
@@ -24,15 +68,17 @@ function CreateES(props) {
   <div className="field-body">
     <div className="field">
       <p className="control is-expanded has-icons-left">
-        <input className="input" type="text" placeholder="Host Name"/>
-        <span className="icon is-small is-left">
+        <input className="input" type="text" name="hostname" placeholder="Host Name"
+         value={this.state.hostname} onChange={this.handleChange}/>
+                <span className="icon is-small is-left">
         <FontAwesomeIcon icon={["fas", "user"]}/>
         </span>
       </p>
     </div>
     <div className="field">
       <p className="control is-expanded has-icons-left has-icons-right">
-        <input className="input" type="email" placeholder="Email"/>
+        <input className="input" type="email" name="email" placeholder="Email"
+        value={this.state.email} onChange={this.handleChange}/>
         <span className="icon is-small is-left">
         <FontAwesomeIcon icon={["fas", "envelope"]}/>
         </span>
@@ -52,7 +98,8 @@ function CreateES(props) {
           </a>
         </p>
         <p className="control is-expanded">
-          <input className="input" type="tel" placeholder="Your phone number"/>
+          <input className="input" type="number" name="telephone" placeholder="Your phone number"
+          value={this.state.telephone} onChange={this.handleChange}/>
         </p>
       </div>
     </div>
@@ -64,7 +111,7 @@ function CreateES(props) {
 <label className="label">Type of Service</label>
 <div className="control">
   <div className="select">
-    <select>
+    <select name="selectdropdown"value={this.state.selectdropdown} onChange={this.handleChange}>
         <option selected>Select dropdown</option>
       <option>Catering</option>
       <option>Florists</option>
@@ -80,27 +127,30 @@ function CreateES(props) {
 <div className="field">
 <label className="label">Average Price</label>
 <div className="control">
-  <input type="number" className="input"/>
+  <input type="text" name="avgprice" className="input"
+  value={this.state.avgprice} onChange={this.handleChange}/>
 </div>
 </div> 
 
 <div className="field">
 <label className="label">Useful Links</label>
 <div className="control">
-  <input type="text" className="input"/>
+  <input type="text" name="usefullinks" className="input"
+  value={this.state.usefullinks} onChange={this.handleChange}/>
 </div>
 </div> 
 
 <div className="field">
 <label className="label">Description</label>
 <div className="control">
-  <textarea className="textarea" placeholder="Please tell us more about your experience in the field and what makes you stand out!"></textarea>
+  <textarea className="textarea" name="description" placeholder="Please tell us more about your experience in the field and what makes you stand out!"
+  value={this.state.description} onChange={this.handleChange}/>
 </div>
 </div>
 
 <div className="field">
 <div className="control">
-    <input type="checkbox"/>
+    <input type="checkbox" name="checkbox" value={this.state.checkbox} onChange={this.handleInputChange} />
     <label className="checkbox">
     I agree to the <a href="#">terms and conditions</a> 
   </label>
@@ -112,7 +162,8 @@ function CreateES(props) {
   <button className="button is-primary">Submit</button>
 </div>
 <div className="control">
-  <button className="button is-text">Cancel</button>
+  <button className="button is-text" onClick={() => this.props.toggleModal('createES_page')}>Cancel</button>
+
 </div>
 </div>
 </div>
@@ -122,5 +173,5 @@ function CreateES(props) {
 </div>
 
     )
-}
+}}
 export default CreateES;

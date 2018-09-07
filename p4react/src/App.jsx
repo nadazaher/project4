@@ -17,7 +17,9 @@ class App extends Component {
       email: '',
       password: '',
       isLoggedIn: null,
-      register_page: "modal"
+      register_page: "modal",
+      createES_page: "modal"
+
     };
     
     this.isLoggedIn = this.isLoggedIn.bind(this)
@@ -96,7 +98,7 @@ toggleModal(modal) {
       <div>
         <LogIn login={this.state.login_page} toggleModal={this.toggleModal} handleLogIn={this.handleLogIn}/>
         <Header toggleModal={this.toggleModal}/>
-        <LoggedInLandingPage></LoggedInLandingPage>
+        <LoggedInLandingPage createEV={this.state.createES_page} toggleModal={this.toggleModal}/>
         <LandingPage></LandingPage>
         <Register register={this.state.register_page} toggleModal={this.toggleModal} handleRegister={this.handleRegister}/>
       

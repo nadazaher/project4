@@ -4,10 +4,10 @@ import CreateES from './CreateES';
 function LoggedInLandingPage(props) {
     return (
 <div>
-<center><button className="createbutton">Create New Service</button></center>
+<center><button className="createbutton" onClick={() => props.toggleModal('createES_page')}>Create New Service</button></center>
 
-  {/* ## this should actually just be a create button that links to the CreateES page - lets make a modal */}
-{/* <CreateES createES={this.state.createES_page} toggleModal={this.toggleModal} /> */}
+ <CreateES createES={props.createEV} toggleModal={props.toggleModal}
+ /> 
         <div>
             <div className="LandingContent">
                 <div className="grid-container">
