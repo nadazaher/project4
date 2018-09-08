@@ -115,14 +115,12 @@ pageView() {
       createEV={this.state.createES_page} 
       toggleModal={this.toggleModal} 
       createEventService={this.createEventService}
+      handleLinks={this.handleLinks}
       />;
 
-    // case 'register page':
-    //   return <Register
-    //     handleRegisterSubmit={this.handleRegisterSubmit}
-    //     favoriteCount={this.favoriteCount}
-    //     handleLinks={this.handleLinks}
-    //   />;
+    case 'one-category-display':
+      return <ESbyCategory
+      />;
 
     // case 'companies index':
     //   return <CompanyView
@@ -194,7 +192,6 @@ pageView() {
         {/* <LoggedInLandingPage createEV={this.state.createES_page} toggleModal={this.toggleModal} createEventService={this.createEventService}/> */}
         {/* <LandingPage toggleModal={this.toggleModal}/> */}
         <Register register={this.state.register_page} toggleModal={this.toggleModal} handleRegister={this.handleRegister} handleLinks={this.handleLinks}/>
-        {/* <ESbyCategory/> */}
         {this.pageView()}
     </div>
   );

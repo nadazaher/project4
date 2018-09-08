@@ -1,17 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CreateES from './CreateES';
 
-function LoggedInLandingPage(props) {
-    return (
-<div>
-<center><button className="createbutton" onClick={() => props.toggleModal('createES_page')}>Create New Service</button></center>
+class LoggedInLandingPage extends Component {
 
- <CreateES createES={props.createEV} toggleModal={props.toggleModal} createEventService={props.createEventService}
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            eventservices: {
+                hostname: '',
+                email: '',
+                telephone: '',
+                avgprice: '',
+                usefullinks: '',
+                checkbox: false,
+                selectdropdown: 'Select Dropdown',
+                description: ''
+                },
+            selectedCategory: null
+        };
+
+        // this.handleChange = this.handleChange.bind(this);
+       
+    }
+
+    // showCategory
+
+//funtions go here
+
+
+    render () {
+        return (
+<div>
+<center><button className="createbutton" onClick={() => this.props.toggleModal('createES_page')}>Create New Service</button></center>
+
+ <CreateES createES={this.props.createEV} toggleModal={this.props.toggleModal} createEventService={this.props.createEventService}
  /> 
         <div>
-            <div className="LandingContent">
+            <div className="LandingContent-new">
                 <div className="grid-container">
-                <div className="grid-item"><img className="homepic" src ="https://www.apple.com/v/apple-music/h/images/shared/og_image.png?201808060701"/>
+                <div className="grid-item"><img className="homepic" src ="https://www.apple.com/v/apple-music/h/images/shared/og_image.png?201808060701"
+                                onClick={() => this.props.handleLinks('one-category-display')}
+                                />
                 Music
                </div>
                 <div className="grid-item"><img className="homepic" src = "https://shelbycountyartscouncil.com/wp-content/uploads/2017/09/pexels-photo-226243.jpeg"/>
@@ -28,6 +59,6 @@ function LoggedInLandingPage(props) {
             </div>
             </div>
 </div>
-    )
-}
+    );
+}}
 export default LoggedInLandingPage;

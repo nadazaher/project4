@@ -31,6 +31,24 @@ body {
   box-shadow:black 3px 3px 3px;
   cursor: pointer;
 }
+.grid-item-services {
+  max-width: 400px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 3px 5px 3px 5px;
+
+
+}
+
+.description {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.container-services {
+  grid-row-gap: 60px;
+  grid-column-gap: 0px;
+}
+
 
 .createbutton {
   background-color: white;
@@ -41,16 +59,14 @@ body {
   box-shadow:black 3px 3px 3px;
   cursor: pointer;
   margin-top: 100px;
+  margin-bottom: 32px;
 }
+
 
 .homepic {
   width: 300px;
   height: 180px;
   padding: 10px;
-}
-
-.createform {
-  margin: 30px;
 }
 
 .checkbox {
@@ -71,9 +87,17 @@ nav {
 }
 
 .createform{
-  margin: 0px;
+  margin: 2px;
+}
+
+.LandingContent-new{
+  margin: 4px;
 }
 
 .usericon{
   font-size: 25px;
+}
+
+.ESOneContent {
+  margin-top: 120px;
 }

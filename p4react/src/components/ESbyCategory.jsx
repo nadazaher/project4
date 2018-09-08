@@ -4,48 +4,143 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function ESbyCategory(props){
     return (
 
+      <div className="ESOneContent">
+        <div className="grid-container container-services">
+           <div className="grid-item-services">
 
+          <div className="box">
+          <article className="media">
+          <div className="media-left">
 
-        <div className="grid-container">
-                <div className="grid-item">
-
-    <div className="box">
-  <article className="media">
-    <div className="media-left">
-      <figure className="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"/>
-      </figure>
-    </div>
-    <div className="media-content">
-      <div className="content">
-        <p>
-          <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-          <br></br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+          <div className="media-content">
+          <div className="content">
+          <div>
+          <p>
+            <strong>Host Name:</strong>
+            <br></br>
+            <strong>Email:</strong>
+            <br></br>
+            <strong>Phone Number:</strong>
+            <br></br>
+            <div className="description">
+            <strong>Description of Service:</strong><p> eiuhrfiejodwknbehrdkjwhegvdjbkwehecjykfgyyxghjkgcfnhmvbj,vmgcfnmvh,j.kj,gvmcfnmhv,j</p>
+            </div>
+            <br></br>
+            <strong>Average price:</strong>
+            <br></br>
+            <strong>Useful links:</strong>
+            <br></br>
+            <strong>Created at:</strong>
         </p>
-      </div>
-      <nav className="level is-mobile">
-        <div className="level-left">
-          <a className="level-item" aria-label="reply">
-            <span className="icon is-small">
-              <i className="fas fa-reply" aria-hidden="true"></i>
+          </div>
+           </div>
+    </div>
+    <a class="level-item" aria-label="like">
+            <span class="icon is-small">
+            <FontAwesomeIcon icon={["far", "heart"]} aria-hidden="true"/>
             </span>
           </a>
-          <a className="level-item" aria-label="retweet">
-            <span className="icon is-small">
-              <i className="fas fa-retweet" aria-hidden="true"></i>
-            </span>
-          </a>
-          <a className="level-item" aria-label="like">
-            <span className="icon is-small">
-              <i className="fas fa-heart" aria-hidden="true"></i>
-            </span>
-          </a>
-        </div>
-      </nav>
+    
     </div>
   </article>
 </div>
+</div>
+<div className="grid-item-services">
+
+<div className="box">
+<article className="media">
+<div className="media-left">
+</div>
+<div className="media-content">
+<div className="content">
+<p>
+<strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+<br></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+  </p>
+ </div>
+</div>
+</article>
+</div>
+</div>
+
+<div className="grid-item-services">
+
+<div className="box">
+<article className="media">
+<div className="media-left">
+</div>
+<div className="media-content">
+<div className="content">
+<p>
+<strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+<br></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+  </p>
+ </div>
+</div>
+</article>
+</div>
+</div>
+
+<div className="grid-item-services">
+
+<div className="box">
+<article className="media">
+<div className="media-left">
+</div>
+<div className="media-content">
+<div className="content">
+<p>
+<strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+<br></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+  </p>
+ </div>
+</div>
+</article>
+</div>
+</div>
+
+<div className="grid-item-services">
+
+<div className="box">
+<article className="media">
+<div className="media-left">
+</div>
+<div className="media-content">
+<div className="content">
+<p>
+<strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+<br></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+  </p>
+ </div>
+</div>
+</article>
+</div>
+</div>
+
+<div className="grid-item-services">
+
+<div className="box">
+<article className="media">
+<div className="media-left">
+</div>
+<div className="media-content">
+<div className="content">
+<p>
+<strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+<br></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+  </p>
+ </div>
+</div>
+</article>
+</div>
+</div>
+
+
 </div>
 </div>
     )
