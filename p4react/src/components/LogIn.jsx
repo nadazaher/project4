@@ -53,33 +53,38 @@ class LogIn extends Component {
               </header>
               <section className="modal-card-body">
               <div>
-<div class="field">
-  <p class="control has-icons-left has-icons-right">
+<div className="field">
+  <p className="control has-icons-left has-icons-right">
 
 
-    <input class="input" name="email" type="email" placeholder="Email" value={this.state.email} onChange={this.handleChange}/>
-    <span class="icon is-small is-left">
+    <input className="input" name="email" type="email" placeholder="Email" value={this.state.email} onChange={this.handleChange}/>
+    <span className="icon is-small is-left">
         <FontAwesomeIcon icon={["fas", "envelope"]}/>
     </span>
-    <span class="icon is-small is-right">
+    <span className="icon is-small is-right">
         <FontAwesomeIcon icon={["fas", "check"]}/>
     </span>
   </p>
 </div>
-<div class="field">
-  <p class="control has-icons-left">
-    <input class="input" name="password" type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
-    <span class="icon is-small is-left">
+<div className="field">
+  <p className="control has-icons-left">
+    <input className="input" name="password" type="password" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
+    <span className="icon is-small is-left">
         <FontAwesomeIcon icon={["fas", "lock"]}/>
     </span>
   </p>
 </div>
-<div class="field">
-  <p class="control">
-<button type="submit" value="Log In" className="button is-success" onClick={(() => this.props.handleLogIn(this.state.email, this.state.password))}>
+<div className="field">
+  <p className="control">
+<button type="submit" value="Log In" className="button is-success" onClick={() => {        this.props.handleLogIn(this.state.email, this.state.password)
+this.props.toggleModal('login_page')
+this.props.handleLinks('logged in landing')
+}
+
+    }>
           Login
           </button>
-    <button class="button is-text" onClick={() => {
+    <button className="button is-text" onClick={() => {
         this.props.toggleModal('register_page')
         this.props.toggleModal('login_page')
     }}

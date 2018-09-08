@@ -20,17 +20,19 @@ class App extends Component {
       password: '',
       isLoggedIn: false,
       register_page: "modal",
-      createES_page: "modal"
+      createES_page: "modal",
+      currentView: ''
 
     };
     
     this.isLoggedIn = this.isLoggedIn.bind(this)
-    this.logout = this.logout.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleLogIn = this.handleLogIn.bind(this)
     this.toggleModal = this.toggleModal.bind(this)
     this.handleRegister = this.handleRegister.bind(this)
     this.createEventService = this.createEventService.bind(this)
+    this.handleLinks = this.handleLinks.bind(this)
   }
 // Do i move isLoggedIn to log in form
 
@@ -70,7 +72,7 @@ handleChange(e) {
   })
 }
 
-logout() {
+handleLogout() {
   localStorage.removeItem("jwt")
   this.setState({
    isLoggedIn: false,
@@ -98,21 +100,105 @@ createEventService(EventService) {
     });
 }
 
+handleLinks(viewName) {
+  this.setState({
+    currentView: viewName
+  })
+}
+
+pageView() {
+  const { currentView } = this.state;
+
+  switch (currentView) {
+    case 'logged in landing':
+      return <LoggedInLandingPage
+      createEV={this.state.createES_page} 
+      toggleModal={this.toggleModal} 
+      createEventService={this.createEventService}
+      />;
+
+    // case 'register page':
+    //   return <Register
+    //     handleRegisterSubmit={this.handleRegisterSubmit}
+    //     favoriteCount={this.favoriteCount}
+    //     handleLinks={this.handleLinks}
+    //   />;
+
+    // case 'companies index':
+    //   return <CompanyView
+    //     handleCompanyLink={this.handleCompanyLink}
+    //     companies={this.state.companies}
+    //     userInfo={this.state.userInfo}
+    //   />;
+    // case 'company page':
+    //   return <CompanyInfoPage
+    //     handleProductLink={this.handleProductLink}
+    //     deleteFavorite={this.deleteFavorite}
+    //     deleteProduct={this.deleteProduct}
+    //     updateProduct={this.updateProduct}
+    //     addFavorite={this.addFavorite}
+    //     handleLinks={this.handleLinks}
+    //     currentCompany={this.state.currentCompany}
+    //     favorites={this.state.favorites}
+    //     userInfo={this.state.userInfo}
+    //     products={this.state.products}
+    //   />;
+    // case 'products index':
+    //   return <ProductView
+    //     handleProductLink={this.handleProductLink}
+    //     deleteFavorite={this.deleteFavorite}
+    //     deleteProduct={this.deleteProduct}
+    //     updateProduct={this.updateProduct}
+    //     createProduct={this.createProduct}
+    //     addFavorite={this.addFavorite}
+    //     handleLinks={this.handleLinks}
+    //     companies={this.state.companies}
+    //     favorites={this.state.favorites}
+    //     userInfo={this.state.userInfo}
+    //     products={this.state.products}
+    //   />;
+    // case 'favorites page':
+    //   return <FavoritesView
+    //     handleProductLink={this.handleProductLink}
+    //     deleteFavorite={this.deleteFavorite}
+    //     deleteProduct={this.deleteProduct}
+    //     updateProduct={this.updateProduct}
+    //     addFavorite={this.addFavorite}
+    //     countFavorites={this.state.countFavorites}
+    //     favoritesStats={this.state.favoritesStats}
+    //     companies={this.state.companies}
+    //     favorites={this.state.favorites}
+    //     userInfo={this.state.userInfo}
+      // />
+    default:
+      return <LandingPage
+        handleLinks={this.handleLinks}
+        toggleModal={this.toggleModal}
+      />
+
+  }
+}
+
+
+
+
+
 
   render() {
 
     return (
       <div>
         {/* <EventService></EventService> */}
-        <LogIn login={this.state.login_page} toggleModal={this.toggleModal} handleLogIn={this.handleLogIn}/>
-        <Header toggleModal={this.toggleModal} isLoggedIn={this.state.isLoggedIn} />
-        <LoggedInLandingPage createEV={this.state.createES_page} toggleModal={this.toggleModal} createEventService={this.createEventService}/>
-        <LandingPage toggleModal={this.toggleModal}/>
-        <Register register={this.state.register_page} toggleModal={this.toggleModal} handleRegister={this.handleRegister}/>
-        <ESbyCategory/>
-      
+        <LogIn login={this.state.login_page} toggleModal={this.toggleModal} handleLogIn={this.handleLogIn} handleLinks={this.handleLinks}/>
+        <Header toggleModal={this.toggleModal} isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleLogout} handleLinks={this.handleLinks}/>
+        {/* <LoggedInLandingPage createEV={this.state.createES_page} toggleModal={this.toggleModal} createEventService={this.createEventService}/> */}
+        {/* <LandingPage toggleModal={this.toggleModal}/> */}
+        <Register register={this.state.register_page} toggleModal={this.toggleModal} handleRegister={this.handleRegister} handleLinks={this.handleLinks}/>
+        {/* <ESbyCategory/> */}
+        {this.pageView()}
     </div>
   );
 }
 }
 export default App;
+
