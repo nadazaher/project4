@@ -9,7 +9,7 @@ import Register from './components/Register';
 import ESbyCategory from './components/ESbyCategory';
 import DetailedES from './components/DetailedES';
 
-import { userLogin, getEventServices, userRegister, saveEventService, saveComment, getComments } from './services/api.js';
+import { userLogin, getEventServices, getOneEvent, userRegister, saveEventService, saveComment, getComments } from './services/api.js';
 
 class App extends Component {
   constructor() {
@@ -133,18 +133,27 @@ class App extends Component {
   }
 
   setCategory(category) {
+    debugger;
     this.setState({
       currentCategory: category
     })
   }
 
-  // setEventService(ES) {
+  setEventService(event_services_id) {
+    getOneEvent(event_services_id)
+    .then(resp => {
+      this.setState({ service: resp.service[0] });
+    });
+  }
+
+
+
   //   const ES = this.state.eventServices.find((ES) =>
   //   ES.id === ESid);
   //   this.setState({
   //     currentES: ES
   //   })
-  // }
+  
 
   pageView() {
     const { currentView } = this.state;
@@ -166,6 +175,8 @@ class App extends Component {
           eventServices={this.state.eventServices}
           currentCategory={this.state.currentCategory}
           handleLinks={this.handleLinks}
+          setEventService={this.setEventService}
+
 
         />;
 

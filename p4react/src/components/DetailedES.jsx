@@ -4,6 +4,7 @@ import AddComment from './addComment';
 
 
 function DetailedES(props){
+  debugger;
 return (
     
 

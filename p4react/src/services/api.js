@@ -27,6 +27,18 @@ export function saveEventService(EventService) {
     });
 }
 
+export function getOneEvent(event_services_id){
+    return fetch(`${BASE_URL}/event_services/${event_services_id}`)
+    .then(resp => {
+        return resp.json()
+    })
+    .catch(err => {
+        throw Error(err);
+    });
+
+}
+
+
 export function getComments() {
   const jwt = localStorage.getItem("jwt")
   const init = {

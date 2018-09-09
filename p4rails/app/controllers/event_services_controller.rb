@@ -22,6 +22,7 @@ class EventServicesController < ApplicationController
     end
 
     def create
+        byebug
         @event_service = EventService.create! event_service_params
         render json: { event_service: @event_service }
     end
@@ -45,7 +46,7 @@ class EventServicesController < ApplicationController
 
     def event_service_params
         params.require(:event_service)
-            .permit(:type_of_service, :host,:contact_info, :description, :link, :avg_price, :user_id)
+            .permit(:type_of_service, :host, :number, :email, :description, :link, :avg_price, :user_id)
     end
 
 end
