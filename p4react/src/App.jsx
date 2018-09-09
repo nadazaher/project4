@@ -159,6 +159,8 @@ class App extends Component {
           setCategory={this.setCategory}
         />;
 
+
+
       case 'one-category-display':
         return <ESbyCategory
           eventServices={this.state.eventServices}
@@ -173,6 +175,9 @@ class App extends Component {
           currentES={this.state.currentES}
           setEventService={this.setEventService}
           toggleModal={this.toggleModal}
+          addComment = {this.state.addComment_page}
+          createComment = {this.createComment}
+      
 
         />;
 

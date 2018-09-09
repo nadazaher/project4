@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import AddComment from './addComment';
+import AddComment from './addComment';
 
 
 function DetailedES(props){
@@ -39,9 +39,11 @@ return (
         props.toggleModal('addComment_page')
     }}
     >Add Comment</button>
-{/*      
-    <AddComment createComment={props.createComment} toggleModal={props.toggleModal}
- />  */}
+ <AddComment createComment={props.createComment} toggleModal={props.toggleModal} addComment = {props.addComment}
+
+ /> 
+
+
 
                   </div>
                 </article>

@@ -5,8 +5,7 @@ class AddComment extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          content: '',
-          addComment_page: "modal"
+          content: ''
 
         //   event_service_id: '',
         //   user_id: ''
@@ -50,7 +49,7 @@ return (
           <div className="modal-card">
             <header className="modal-card-head">
             <p className="modal-card-title">Add Comment</p>
-            <FontAwesomeIcon icon={["fas", "times"]} onClick={() => this.toggleModal('addComment_page')}/>
+            <FontAwesomeIcon icon={["fas", "times"]} onClick={() => this.props.toggleModal('addComment_page')}/>
               </header>
               <section className="modal-card-body">
               <div>
@@ -82,7 +81,7 @@ return (
 </div>
 
 <div className="control">
-  <button className="button is-text" onClick={() => this.toggleModal('addComment_page')}>Cancel</button>
+  <button className="button is-text" onClick={() => this.props.toggleModal('addComment_page')}>Cancel</button>
 
 </div>
 </div>
