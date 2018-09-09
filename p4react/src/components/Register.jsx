@@ -8,6 +8,7 @@ class Register extends Component {
         this.state = {
             email: '',
             password: '',
+            id: '',
             isLoggedIn: null
         };
 
@@ -35,7 +36,8 @@ class Register extends Component {
         this.props.onSubmit(this.state);
         this.setState({
             email: '',
-            password:''
+            password:'',
+            id: ''
         })
         this.props.toggle('registerForm');
     }

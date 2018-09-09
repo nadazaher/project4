@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class CreateES extends Component {
   constructor(props) {
       super(props);
-
       this.state = {
           hostname: '',
           email: '',
@@ -13,7 +12,8 @@ class CreateES extends Component {
           usefullinks: '',
           checkbox: false,
           selectdropdown: 'Select Dropdown',
-          description: ''
+          description: '',
+          userInfo: ''
       };
 
       this.handleChange = this.handleChange.bind(this);
@@ -57,6 +57,7 @@ return (
               <section className="modal-card-body">
               <div>
 
+  
         <div className="createform">
 
 
@@ -76,7 +77,7 @@ return (
     </div>
     <div className="field">
       <p className="control is-expanded has-icons-left has-icons-right">
-        <input className="input" type="email" name="email" placeholder="Email"
+        <input className="input" type="text" name="email" placeholder="Email"
         value={this.state.email} onChange={this.handleChange}/>
         <span className="icon is-small is-left">
         <FontAwesomeIcon icon={["fas", "envelope"]}/>
@@ -97,7 +98,7 @@ return (
           </a>
         </p>
         <p className="control is-expanded">
-          <input className="input" type="number" name="telephone" placeholder="Your phone number"
+          <input className="input" type="text" name="telephone" placeholder="Your phone number"
           value={this.state.telephone} onChange={this.handleChange}/>
         </p>
       </div>
@@ -113,7 +114,7 @@ return (
     <select name="selectdropdown"value={this.state.selectdropdown} onChange={this.handleChange}>
         <option selected>Select dropdown</option>
       <option>Catering</option>
-      <option>Florists</option>
+      <option>Florist</option>
       <option>Make-Up</option>
       <option>Music</option>
       <option>Photography</option>
@@ -159,18 +160,21 @@ return (
 <div className="field is-grouped">
 <div className="control">
   <button className="button is-primary" onClick={(e) => {
-    console.log("nada")
+    console.log("STATE", this.state)
             this.props.createEventService({
-              hostname: this.state.hostname,
+              host: this.state.hostname,
               email: this.state.email,
-              telephone: this.state.telephone,
-              avgprice: this.state.avgprice,
-              usefullinks: this.state.usefullinks,
+              number: this.state.telephone,
+              avg_price: this.state.avgprice,
+              link: this.state.usefullinks,
               checkbox: this.state.checkbox,
-              selectdropdown: this.state.selectdropdown,
-              description: this.state.description
+              type_of_service: this.state.selectdropdown,
+              description: this.state.description,
+              user_id: this.state.userInfo
             })}}>Create
             </button>
+
+            
 </div>
 
 <div className="control">

@@ -35,7 +35,8 @@ class LogIn extends Component {
         this.props.onSubmit(this.state);
         this.setState({
             email: '',
-            password:''
+            password:'',
+            userId: ''
         })
         this.props.toggle('loginForm');
     }

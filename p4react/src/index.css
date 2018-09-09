@@ -32,23 +32,33 @@ body {
   cursor: pointer;
 }
 .grid-item-services {
-  max-width: 400px;
+  max-width: 700px;
   margin-right: 0px;
   margin-left: 0px;
   padding: 3px 5px 3px 5px;
-
-
+  min-height: 500px;
+  min-width: 400px;
 }
+
 
 .description {
   overflow-wrap: break-word;
   word-wrap: break-word;
+  max-width: 350px;
+
+
 }
 .container-services {
-  grid-row-gap: 60px;
+  margin-top: 10px;
+  margin-left: 70px;
+  grid-row-gap: 50px;
   grid-column-gap: 0px;
 }
 
+.detailed-info {
+  max-width: 1100px;
+  margin-left: 150px;
+}
 
 .createbutton {
   background-color: white;
@@ -61,8 +71,16 @@ body {
   margin-top: 100px;
   margin-bottom: 32px;
 }
+.heart-icon{
+  font-size: 15px;
+  display: inline-block;
+  /* margin-left: 800px; */
+}
 
-
+.comment-button {
+  margin-left: 900px;
+  /* display: inline-block */
+}
 .homepic {
   width: 300px;
   height: 180px;
