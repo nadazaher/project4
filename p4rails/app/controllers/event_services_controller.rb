@@ -45,7 +45,7 @@ class EventServicesController < ApplicationController
 
     def event_service_params
         params.require(:event_service)
-            .permit(:type_of_service, :host, :number, :email, :description, :link, :avg_price, :user_id)
+            .permit(:type_of_service, :host, :number, :email, :description, :link, :avg_price, :user_id, :id)
     end
 
 end

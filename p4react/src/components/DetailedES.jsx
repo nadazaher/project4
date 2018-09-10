@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AddComment from './addComment';
+import EditEventService from './editEventService';
 
 
 function DetailedES(props) {
@@ -9,12 +10,30 @@ function DetailedES(props) {
 
     <div className="ESOneContent">
       <div className="box detailed-info">
-              <FontAwesomeIcon icon={["fas", "trash"]} className="delete" onClick={() => props.deleteEventService(props.currentES)}/>
+              <FontAwesomeIcon icon={["fas", "trash"]} className="delete" onClick={() => {
+              props.deleteEventService(props.currentES)
+              props.handleLinks('logged in landing');}}/>
+            <FontAwesomeIcon icon={["fas", "pencil-alt"]} className="edit" 
+            onClick={() => {
+              props.toggleModal('editESPage'); 
+              props.updateEventService(props.currentES)
+            }}
+              />
+              <EditEventService 
+              toggleModal={props.toggleModal}
+              updateEventService={props.updateEventService}
+              handleLinks={props.handleLinks}
+              userInfo={props.userInfo}
+              editESPage={props.editESPage}
+              currentES={props.oneService}
+              />
+
+  
         <article className="media">
           <div className="media-left">
 
             <div className="media-content">
-              <div className="content">
+              <div className="content"> 
                 <div>
                   <p className="description">
 

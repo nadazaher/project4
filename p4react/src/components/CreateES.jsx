@@ -45,7 +45,6 @@ handleInputChange(event) {
 
 render () {
 return (
-
       <div className={this.props.createES}>
           <div className="modal-background"></div>
           <div className="modal-card">
@@ -159,7 +158,6 @@ return (
 <div className="field is-grouped">
 <div className="control">
   <button className="button is-primary" onClick={(e) => {
-    console.log("STATE", this.state)
             this.props.createEventService({
               host: this.state.hostname,
               email: this.state.email,
@@ -170,7 +168,9 @@ return (
               type_of_service: this.state.selectdropdown,
               description: this.state.description,
               user_id: this.props.userInfo
-            })}}>Create
+            })
+            this.props.handleLinks('landing page')
+          }}>Create
             </button>
 
             

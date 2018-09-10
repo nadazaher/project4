@@ -9,7 +9,7 @@ import Register from './components/Register';
 import ESbyCategory from './components/ESbyCategory';
 import DetailedES from './components/DetailedES';
 
-import { userLogin, getEventServices, getOneEvent, userRegister, saveEventService, saveComment, getComments, destroyEventService } from './services/api.js';
+import { userLogin, getEventServices, getOneEvent, userRegister, saveEventService, saveComment, getComments, destroyEventService, modifyEventService } from './services/api.js';
 
 class App extends Component {
   constructor() {
@@ -22,13 +22,13 @@ class App extends Component {
       register_page: "modal",
       createES_page: "modal",
       addComment_page: "modal",
+      editESPage: "modal",
       currentView: '',
       currentCategory: '',
       currentES: '',
       userInfo: null,
       comments: [],
-      oneService: '',
-      ESid:''
+      oneService: ''
     };
 
     this.isLoggedIn = this.isLoggedIn.bind(this)
@@ -43,6 +43,7 @@ class App extends Component {
     this.createComment = this.createComment.bind(this)
     this.setEventService = this.setEventService.bind(this)
     this.deleteEventService = this.deleteEventService.bind(this)
+    this.updateEventService = this.updateEventService.bind(this)
   }
 
   componentDidMount() {
@@ -90,9 +91,9 @@ class App extends Component {
 
   }
 
-  showComments()
-  getComments()
-  
+  // showComments()
+  // getComments()
+
 
   handleChange(e) {
     this.setState({
@@ -163,7 +164,16 @@ class App extends Component {
     });
   }
 
+  updateEventService(EventService){
+    modifyEventService(EventService)
+    .then(data => getEventServices())
+      .then(data => {
+        this.setState({ eventServices: data.event_services  });
+      })
+  }
   
+      
+
 
   pageView() {
     const { currentView } = this.state;
@@ -203,6 +213,9 @@ class App extends Component {
           oneService={this.state.oneService}
           createComment={this.createComment}
           deleteEventService={this.deleteEventService}
+          handleLinks={this.handleLinks}
+          updateEventService={this.updateEventService}
+          editESPage={this.state.editESPage} 
 
         />;
 
@@ -223,11 +236,8 @@ class App extends Component {
 
     return (
       <div>
-        {/* <EventService></EventService> */}
         <LogIn login={this.state.login_page} toggleModal={this.toggleModal} handleLogIn={this.handleLogIn} handleLinks={this.handleLinks} />
         <Header toggleModal={this.toggleModal} isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleLogout} handleLinks={this.handleLinks} />
-        {/* <LoggedInLandingPage createEV={this.state.createES_page} toggleModal={this.toggleModal} createEventService={this.createEventService}/> */}
-        {/* <LandingPage toggleModal={this.toggleModal}/> */}
         <Register register={this.state.register_page} toggleModal={this.toggleModal} handleRegister={this.handleRegister} handleLinks={this.handleLinks} />
         {this.pageView()}
       </div>

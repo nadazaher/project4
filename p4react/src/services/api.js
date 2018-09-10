@@ -69,6 +69,7 @@ export function saveComment(Comment) {
 
 
 export function modifyEventService(EventService) {
+  console.log("nada", EventService)
   const opts = {
     method: 'PUT',
     body: JSON.stringify(EventService),
@@ -77,7 +78,7 @@ export function modifyEventService(EventService) {
     }
   };
 
-  return fetch(`${BASE_URL}/event_service/${EventService.id}`, opts)
+  return fetch(`${BASE_URL}/event_services/${EventService.id}`, opts)
     .then(resp => resp.json())
     .catch(err => {
       throw Error(err);

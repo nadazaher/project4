@@ -10,7 +10,8 @@ function Header(props) {
           <div className="navbar-start ">
             <a className="navbar-item ">
               <h1 className="title is-size-2  has-text-black"
-                onClick={() => props.handleLinks('logged in landing')}>Event Services</h1>
+                onClick={() => props.handleLinks('logged in landing')}>   خدمات الحفلات في مصر
+                </h1>
             </a>
 
           </div>
