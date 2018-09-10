@@ -49,8 +49,9 @@ body {
 
 }
 .container-services {
-  margin-top: 10px;
-  margin-left: 70px;
+  margin-top: 9px;
+  margin-left: 40px;
+  margin-right: 40px;
   grid-row-gap: 50px;
   grid-column-gap: 0px;
 }
@@ -123,17 +124,19 @@ nav {
 .delete {
   float: right;
   background-color:white;
-  max-width: 35px;
-  max-height: 35px;
+  max-width: 40px;
+  max-height: 40px;
   margin: 3px;
+  color: red;
 }
 
 .edit {
   float: right;
   background-color: white;
-  min-width: 25px;
-  min-height: 25px;
+  min-width: 24px;
+  min-height: 24px;
   padding: 2px;
   margin: 2px;
+  color: green;
 
 }
