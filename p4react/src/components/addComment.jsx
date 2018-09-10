@@ -6,9 +6,6 @@ class AddComment extends Component {
       super(props);
       this.state = {
           content: ''
-
-        //   event_service_id: '',
-        //   user_id: ''
       };
 
       this.handleChange = this.handleChange.bind(this);
@@ -70,10 +67,11 @@ return (
 <div className="field is-grouped">
 <div className="control">
   <button className="button is-primary" onClick={(e) => {
-    console.log("STATE", this.state)
+    console.log("CHECK", this.props.currentES.id)
             this.props.createComment({
               content: this.state.content,
-              
+              event_service_id: this.props.currentES.id,
+              user_id: this.props.userInfo              
             })}}>Submit
             </button>
 

@@ -35,7 +35,7 @@ class LoggedInLandingPage extends Component {
 <div>
 <center><button className="createbutton" onClick={() => this.props.toggleModal('createES_page')}>Create New Service</button></center>
 
- <CreateES createES={this.props.createEV} toggleModal={this.props.toggleModal} createEventService={this.props.createEventService}
+ <CreateES createES={this.props.createEV} toggleModal={this.props.toggleModal} createEventService={this.props.createEventService} userInfo={this.props.userInfo}
  /> 
         <div>
             <div className="LandingContent-new">

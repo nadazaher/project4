@@ -2,12 +2,13 @@ class CommentsController < ApplicationController
   # before_action :authenticate_user, only: [:create, :update, :destroy]
 
     def index
-        if (params[:event_service_id])
-          @comments = EventService.find(params[:event_service_id]).comments
-        else
-          @comments = Comment.all
-        end
-        render json: { comments: @comments}
+        # if (params[:event_service_id])
+        #   @comments = EventService.find(params[:event_service_id]).comments
+        # else
+        #   @comments = Comment.all
+        # end
+        render json: {comments: Comment.all}
+        # render json: { comments: @comments}
       end
 
     def show
@@ -17,11 +18,14 @@ class CommentsController < ApplicationController
     end
 
     def create
-        if (params[:event_service_id])
-          @comment = EventService.find(params[:event_service_id]).comments.new(comment_params)
-        else
-          @comment = Comment.new(comment_params)
-        end
+
+       @comment = Comment.new(comment_params)
+       
+        # if (params[:event_service_id])
+        #   @comment = EventService.find(params[:event_service_id]).comments.new(comment_params)
+        # else
+        #   @comment = Comment.new(comment_params)
+        # end
 
         if @comment.save
           render json: { comment: @comment }

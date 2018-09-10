@@ -37,8 +37,8 @@ class ESbyCategory extends Component {
             <div className="grid-item-services">
 
               <div className="box" onClick={() => {
-                    // this.props.setEventService(event_services_id)
-                    this.props.handlelinks('detailed-display');
+                    this.props.setEventService(service.id)
+                    this.props.handleLinks('detailed-display');
                 }}>
                 <article className="media">
                   <div className="media-left">

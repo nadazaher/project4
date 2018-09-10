@@ -27,8 +27,8 @@ export function saveEventService(EventService) {
     });
 }
 
-export function getOneEvent(event_services_id){
-    return fetch(`${BASE_URL}/event_services/${event_services_id}`)
+export function getOneEvent(id){
+    return fetch(`${BASE_URL}/event_services/${id}`)
     .then(resp => {
         return resp.json()
     })
@@ -85,17 +85,19 @@ export function modifyEventService(EventService) {
 }
 
 
-export function destroyEventService(EventService) {
+export function destroyEventService(id) {
   const opts = {
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
   }
 
-  return fetch(`${BASE_URL}/event_service/${EventService}`, opts)
+  return fetch(`${BASE_URL}/event_services/${id}`, opts)
     .catch(err => {
       throw Error(err);
     });
 }
-
 
 export function userLogin(loginInfo) {
   const url = `${BASE_URL}/user_token`;
@@ -128,3 +130,4 @@ export function userRegister(loginInfo) {
     })
     .catch(err => console.log(err))
 }
+

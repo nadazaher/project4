@@ -12,8 +12,7 @@ class CreateES extends Component {
           usefullinks: '',
           checkbox: false,
           selectdropdown: 'Select Dropdown',
-          description: '',
-          userInfo: ''
+          description: ''
       };
 
       this.handleChange = this.handleChange.bind(this);
@@ -170,7 +169,7 @@ return (
               checkbox: this.state.checkbox,
               type_of_service: this.state.selectdropdown,
               description: this.state.description,
-              user_id: this.state.userInfo
+              user_id: this.props.userInfo
             })}}>Create
             </button>
 

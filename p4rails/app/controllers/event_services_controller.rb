@@ -22,7 +22,6 @@ class EventServicesController < ApplicationController
     end
 
     def create
-        byebug
         @event_service = EventService.create! event_service_params
         render json: { event_service: @event_service }
     end

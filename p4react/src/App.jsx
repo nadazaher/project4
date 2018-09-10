@@ -9,7 +9,7 @@ import Register from './components/Register';
 import ESbyCategory from './components/ESbyCategory';
 import DetailedES from './components/DetailedES';
 
-import { userLogin, getEventServices, getOneEvent, userRegister, saveEventService, saveComment, getComments } from './services/api.js';
+import { userLogin, getEventServices, getOneEvent, userRegister, saveEventService, saveComment, getComments, destroyEventService } from './services/api.js';
 
 class App extends Component {
   constructor() {
@@ -26,7 +26,9 @@ class App extends Component {
       currentCategory: '',
       currentES: '',
       userInfo: null,
-      comments: []
+      comments: [],
+      oneService: '',
+      ESid:''
     };
 
     this.isLoggedIn = this.isLoggedIn.bind(this)
@@ -39,6 +41,8 @@ class App extends Component {
     this.handleLinks = this.handleLinks.bind(this)
     this.setCategory = this.setCategory.bind(this)
     this.createComment = this.createComment.bind(this)
+    this.setEventService = this.setEventService.bind(this)
+    this.deleteEventService = this.deleteEventService.bind(this)
   }
 
   componentDidMount() {
@@ -75,14 +79,20 @@ class App extends Component {
         })
       })
       .then(() => getEventServices())
+
       .catch(err => console.log(err))
   }
 
   handleRegister(email, password) {
     userRegister({ "email": email, "password": password })
       .then(() => this.handleLogIn(email, password))
+      // console.log("handleRegister")
+
   }
 
+  showComments()
+  getComments()
+  
 
   handleChange(e) {
     this.setState({
@@ -111,6 +121,7 @@ class App extends Component {
   }
 
   createEventService(EventService) {
+    //console.log(EventService)
     saveEventService(EventService)
       .then(data => getEventServices())
       .then(data => {
@@ -133,26 +144,25 @@ class App extends Component {
   }
 
   setCategory(category) {
-    debugger;
     this.setState({
       currentCategory: category
     })
   }
 
-  setEventService(event_services_id) {
-    getOneEvent(event_services_id)
+  setEventService(id) {
+    getOneEvent(id)
     .then(resp => {
-      this.setState({ service: resp.service[0] });
+      this.setState({ oneService: resp.event_service });
+    });
+  }
+  deleteEventService(id) {
+    destroyEventService(id.id)
+    .then(data => getEventServices())
+    .then(data => {
+      this.setState({ eventServices: data.event_services });
     });
   }
 
-
-
-  //   const ES = this.state.eventServices.find((ES) =>
-  //   ES.id === ESid);
-  //   this.setState({
-  //     currentES: ES
-  //   })
   
 
   pageView() {
@@ -166,6 +176,7 @@ class App extends Component {
           createEventService={this.createEventService}
           handleLinks={this.handleLinks}
           setCategory={this.setCategory}
+          userInfo={this.state.userInfo}
         />;
 
 
@@ -176,6 +187,7 @@ class App extends Component {
           currentCategory={this.state.currentCategory}
           handleLinks={this.handleLinks}
           setEventService={this.setEventService}
+          oneService={this.state.oneService}
 
 
         />;
@@ -183,18 +195,19 @@ class App extends Component {
       case 'detailed-display':
         return <DetailedES
           eventServices={this.state.eventServices}
-          currentES={this.state.currentES}
+          currentES={this.state.oneService}
           setEventService={this.setEventService}
           toggleModal={this.toggleModal}
           addComment = {this.state.addComment_page}
-          createComment = {this.createComment}
-      
+          userInfo={this.state.userInfo}
+          oneService={this.state.oneService}
+          createComment={this.createComment}
+          deleteEventService={this.deleteEventService}
 
         />;
 
       default:
         return <LandingPage
-          handleLinks={this.handleLinks}
           toggleModal={this.toggleModal}
         />
 
