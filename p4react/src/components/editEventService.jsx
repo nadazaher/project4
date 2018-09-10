@@ -78,7 +78,8 @@ class EditEventService extends Component {
                     <div className="field">
                       <p className="control is-expanded has-icons-left">
                         <input className="input" type="text" name="hostname"
-                          value={this.state.hostname} onChange={this.handleChange} />
+                          value={this.state.hostname} onChange={this.handleChange} 
+                          />
                         <span className="icon is-small is-left">
                           <FontAwesomeIcon icon={["fas", "user"]} />
                         </span>
