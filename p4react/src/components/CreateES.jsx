@@ -109,8 +109,8 @@ return (
 <label className="label">Type of Service</label>
 <div className="control">
   <div className="select">
-    <select name="selectdropdown"value={this.state.selectdropdown} onChange={this.handleChange}>
-        <option selected>Select dropdown</option>
+    <select name="selectdropdown" value={this.state.selectdropdown} onChange={this.handleChange}>
+        <option>Select dropdown</option>
       <option>Catering</option>
       <option>Florist</option>
       <option>Make-Up</option>
@@ -150,7 +150,7 @@ return (
 <div className="control">
     <input type="checkbox" name="checkbox" value={this.state.checkbox} onChange={this.handleInputChange} />
     <label className="checkbox">
-    I agree to the <a href="#">terms and conditions</a> 
+    I agree to the <a href="www">terms and conditions</a> 
   </label>
 </div>
 </div>

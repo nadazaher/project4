@@ -14,12 +14,7 @@ function DetailedES(props) {
               <FontAwesomeIcon icon={["fas", "trash"]} className="delete" onClick={() => {
               props.deleteEventService(props.currentES)
               props.handleLinks('logged in landing');}}/>
-            <FontAwesomeIcon icon={["fas", "pencil-alt"]} className="edit" 
-            onClick={() => {
-              props.toggleModal('editESPage'); 
-              props.updateEventService(props.currentES)
-            }}
-              />
+        
               <EditEventService 
               toggleModal={props.toggleModal}
               updateEventService={props.updateEventService}
@@ -36,7 +31,7 @@ function DetailedES(props) {
             <div className="media-content">
               <div className="content"> 
                 <div>
-                  <p className="description">
+                  <div className="description">
 
                     <strong>Host Name:</strong><p>{props.currentES.host}</p>
                     <strong>Email:</strong><p>{props.currentES.email}</p>
@@ -46,12 +41,12 @@ function DetailedES(props) {
                     <strong>Useful links: </strong><p><a href={props.currentES.link}>{props.currentES.link}</a></p>
 
                     <strong>Created at:</strong><p>{props.currentES.created_at}</p>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
-            {/* <a class="level-item" aria-label="like"> */}
-            {/* <span class="icon is-small heart-icon">
+            {/* <a className="level-item" aria-label="like"> */}
+            {/* <span className="icon is-small heart-icon">
               <FontAwesomeIcon icon={["far", "heart"]} />
             </span> */}
             {/* </a> */}

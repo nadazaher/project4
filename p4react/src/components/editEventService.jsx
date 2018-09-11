@@ -162,7 +162,7 @@ class EditEventService extends Component {
                   <div className="control">
                     <input type="checkbox" name="checkbox" value={this.state.checkbox} onChange={this.handleInputChange} />
                     <label className="checkbox">
-                      I agree to the <a href="#">terms and conditions</a>
+                      I agree to the <a href="www">terms and conditions</a>
                     </label>
                   </div>
                 </div>

@@ -34,24 +34,26 @@ class ESbyCategory extends Component {
       <div className="ESOneContent">
         <div className="grid-container container-services">
           {filteredServices.map((service => (
-            <div className="grid-item-services">
+            <div 
+            className="grid-item-services">
 
-              <div className="box"> 
-              {/* onClick={() => {
+              <div className="box" 
+              onClick={() => {
                     this.props.setEventService(service.id)
                     this.props.handleLinks('detailed-display')
                     // this.props.handleESLink('detailed-display', this.props.currentES)
-                }}> */}
-                <FontAwesomeIcon icon={["fas", "times"]} className="delete2" onClick={() => {
+                }}>
+
+                <FontAwesomeIcon icon={["fas", "trash-alt"]} className="delete2" onClick={() => {
                   console.log("clicked")
-              this.props.deleteEventService(this.props.currentES);
+              this.props.deleteEventService(this.props.currentES)
               this.props.handleLinks('logged in landing');}}
-                />  
+                />
                 
                 <article className="media">
                   <div className="media-left">
-                  <figure class="image is-96x96 is-left" >
-        <img src="http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg" alt="Image"/>
+                  <figure className="image is-96x96 is-left" >
+        <img src="http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg" alt="imggg"/>
       </figure>
       </div>
       
@@ -59,7 +61,7 @@ class ESbyCategory extends Component {
                     <div className="media-content">
                       <div className="content">
                         <div>
-                          <p className="description">
+                          <div className="description">
 
                             <strong>Host Name:</strong><p>{service.host}</p>
                             <strong>Email:</strong><p>{service.email}</p>
@@ -71,10 +73,10 @@ class ESbyCategory extends Component {
                             <strong>Created at:</strong><p>{service.created_at}</p>
 
 
-<nav class="level is-mobile">
-        <div class="level-left">
-                              <a class="level-item" >
-            <span class="icon is-small">
+<nav className="level is-mobile">
+        <div className="level-left">
+                              <a className="level-item" >
+            <span className="icon is-small">
             <FontAwesomeIcon icon={["fas", "pencil-alt"]} className="edit" 
             onClick={() => {
               this.props.toggleModal('editESPage'); 
@@ -86,7 +88,7 @@ class ESbyCategory extends Component {
           </div>
           </nav>
           
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>
