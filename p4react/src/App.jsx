@@ -17,6 +17,7 @@ class App extends Component {
 
     this.state = {
       eventServices: [],
+      // comments: [],
       login_page: "modal",
       isLoggedIn: false,
       register_page: "modal",
@@ -27,8 +28,8 @@ class App extends Component {
       currentCategory: '',
       currentES: '',
       userInfo: null,
-      comments: [],
       oneService: ''
+      // oneComment: ''
     };
 
     this.isLoggedIn = this.isLoggedIn.bind(this)
@@ -44,11 +45,17 @@ class App extends Component {
     this.setEventService = this.setEventService.bind(this)
     this.deleteEventService = this.deleteEventService.bind(this)
     this.updateEventService = this.updateEventService.bind(this)
+    this.handleESLink = this.handleESLink.bind(this)
+    // this.showComments= this.showComments.bind(this)
   }
 
   componentDidMount() {
     getEventServices()
       .then(data => this.setState({ eventServices: data.event_services }));
+
+    // getComments()
+    // .then(data => this.setState({ comments: data.comments }));
+
 
     this.isLoggedIn()
   }
@@ -87,12 +94,13 @@ class App extends Component {
   handleRegister(email, password) {
     userRegister({ "email": email, "password": password })
       .then(() => this.handleLogIn(email, password))
-      // console.log("handleRegister")
 
   }
 
-  // showComments()
-  // getComments()
+//   showComments() {
+//   getComments()
+//   .then(data => this.setState({ comments: data.comments }));
+// }
 
 
   handleChange(e) {
@@ -172,6 +180,12 @@ class App extends Component {
       })
   }
   
+  handleESLink(viewName, EventService){
+    this.setState({
+      currentView: viewName,
+      currentES: EventService
+    })
+  }
       
 
 
@@ -190,7 +204,6 @@ class App extends Component {
         />;
 
 
-
       case 'one-category-display':
         return <ESbyCategory
           eventServices={this.state.eventServices}
@@ -198,9 +211,13 @@ class App extends Component {
           handleLinks={this.handleLinks}
           setEventService={this.setEventService}
           oneService={this.state.oneService}
-
-
+          handleESLink={this.handleESLink}
+          currentES={this.state.oneService}
+          toggleModal={this.toggleModal}
+          deleteEventService={this.deleteEventService}
+          updateEventService={this.updateEventService}
         />;
+
 
       case 'detailed-display':
         return <DetailedES
@@ -216,8 +233,12 @@ class App extends Component {
           handleLinks={this.handleLinks}
           updateEventService={this.updateEventService}
           editESPage={this.state.editESPage} 
+          showComments={this.showComments}
+          // oneComment={this.state.oneComment}
+
 
         />;
+
 
       default:
         return <LandingPage

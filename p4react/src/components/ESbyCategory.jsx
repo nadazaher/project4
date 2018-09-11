@@ -36,13 +36,26 @@ class ESbyCategory extends Component {
           {filteredServices.map((service => (
             <div className="grid-item-services">
 
-              <div className="box" onClick={() => {
+              <div className="box"> 
+              {/* onClick={() => {
                     this.props.setEventService(service.id)
-                    this.props.handleLinks('detailed-display');
-                }}>
+                    this.props.handleLinks('detailed-display')
+                    // this.props.handleESLink('detailed-display', this.props.currentES)
+                }}> */}
+                <FontAwesomeIcon icon={["fas", "times"]} className="delete2" onClick={() => {
+                  console.log("clicked")
+              this.props.deleteEventService(this.props.currentES);
+              this.props.handleLinks('logged in landing');}}
+                />  
+                
                 <article className="media">
                   <div className="media-left">
-
+                  <figure class="image is-96x96 is-left" >
+        <img src="http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg" alt="Image"/>
+      </figure>
+      </div>
+      
+     
                     <div className="media-content">
                       <div className="content">
                         <div>
@@ -56,17 +69,28 @@ class ESbyCategory extends Component {
                             <strong>Useful links: </strong><p><a href={service.link}>{service.link}</a></p>
 
                             <strong>Created at:</strong><p>{service.created_at}</p>
+
+
+<nav class="level is-mobile">
+        <div class="level-left">
+                              <a class="level-item" >
+            <span class="icon is-small">
+            <FontAwesomeIcon icon={["fas", "pencil-alt"]} className="edit" 
+            onClick={() => {
+              this.props.toggleModal('editESPage'); 
+             this.props.updateEventService(this.props.currentES)
+            }}         />  
+             </span>
+          </a>
+      
+          </div>
+          </nav>
+          
                           </p>
                         </div>
                       </div>
                     </div>
-                    <a class="level-item" aria-label="like">
-                      <span class="icon is-small">
-                        <FontAwesomeIcon icon={["far", "heart"]} aria-hidden="true" />
-                      </span>
-                    </a>
-
-                  </div>
+                   
                 </article>
               </div>
             </div>

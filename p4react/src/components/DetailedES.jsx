@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AddComment from './addComment';
 import EditEventService from './editEventService';
+// import ShowComments from './showComments';
 
 
 function DetailedES(props) {
@@ -31,7 +32,7 @@ function DetailedES(props) {
   
         <article className="media">
           <div className="media-left">
-
+    
             <div className="media-content">
               <div className="content"> 
                 <div>
@@ -50,17 +51,18 @@ function DetailedES(props) {
               </div>
             </div>
             {/* <a class="level-item" aria-label="like"> */}
-            <span class="icon is-small heart-icon">
+            {/* <span class="icon is-small heart-icon">
               <FontAwesomeIcon icon={["far", "heart"]} />
-            </span>
+            </span> */}
             {/* </a> */}
 
             <button className="button is-light comment-button" onClick={() => {
               props.toggleModal('addComment_page')
             }}
             >Add Comment</button>
-            <AddComment createComment={props.createComment} toggleModal={props.toggleModal} addComment={props.addComment} userInfo={props.userInfo} currentES={props.oneService}
-/>
+            <AddComment createComment={props.createComment} toggleModal={props.toggleModal} addComment={props.addComment} userInfo={props.userInfo} currentES={props.oneService}/>
+
+{/* <ShowComments currentES={props.oneService} userInfo={props.userInfo} showComments={props.ShowComments} */}
 
 
           </div>

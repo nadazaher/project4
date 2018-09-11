@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 export function getEventServices() {
   const jwt = localStorage.getItem("jwt")
@@ -44,10 +44,11 @@ export function getComments() {
   const init = {
     headers: { "Authorization": `Bearer ${jwt}` }
   }
-  return fetch(`${BASE_URL}//event_services/:event_service_id/comments`, init)
+  return fetch(`${BASE_URL}/event_services`, init)
     .then(res => res.json())
     .catch(err => err)
 }
+
 
 
 export function saveComment(Comment) {
