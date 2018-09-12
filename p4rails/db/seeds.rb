@@ -77,7 +77,7 @@ EventService.create([
     description: "For testing",
     link: "For testing",
     avg_price: "$fortesting",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://exquisitebeauty.co.nz//nv-main/wp-content/uploads//2014/11/insert-image-here.png",
     user_id: 1
 },
 { 
@@ -100,7 +100,7 @@ EventService.create([
     description: "For testing",
     link: "For testing",
     avg_price: "$fortesting",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://exquisitebeauty.co.nz//nv-main/wp-content/uploads//2014/11/insert-image-here.png",
     user_id: 2
 },
 { 
@@ -111,7 +111,7 @@ EventService.create([
     description: "We offer all types of services from videography to standard photoshoots. We have a full team of expert photographers. ",
     link: "https://weddinghubeg.com/wp-content/uploads/2017/10/Mena-House-Venues-Wedding-Hub-EG-Cairo-Egypt-2.jpg",
     avg_price: "20,000 LE",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://s3-eu-west-1.amazonaws.com/wuzzuf/files/company_logo/OJO-Creative-studios-Egypt-9159.png",
     user_id: 3
 
 },
@@ -123,7 +123,7 @@ EventService.create([
     description: "I have managed the photography and videography for more than 100 weddings now in Egypt and have a great staff of assistants working with me.",
     link: "https://instagram.com/remonelmarkiz?utm_source=ig_profile_share&igshid=h2spivfw6dzo",
     avg_price: "30,000 LE",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "http://www.cairowestmag.com/wp-content/uploads/2017/05/Remon.jpg",
     user_id: 4
 
 },
@@ -135,7 +135,7 @@ EventService.create([
     description: "For testing",
     link: "For testing",
     avg_price: "$fortesting",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://exquisitebeauty.co.nz//nv-main/wp-content/uploads//2014/11/insert-image-here.png",
     user_id: 1
 },
 
@@ -147,7 +147,7 @@ EventService.create([
     description: "We provide full catering menus to all kinds of events and venues. Feel free to contact us to discuss menu options.",
     link: "https://instagram.com/crave_egypt?utm_source=ig_profile_share&igshid=1ewr48om1eyzj",
     avg_price: "80,000 LE",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "http://roundmenu.s3-website-us-east-1.amazonaws.com/640x400/images/restaurants/rst_892104.jpg",
     user_id: 4
 
 },
@@ -160,7 +160,7 @@ EventService.create([
     description: "Five-star quality food from a selection of many cuisines. Been in business since 1907 so fully experienced",
     link: "https://instagram.com/lepachazamalek?utm_source=ig_profile_share&igshid=1v87jzahcizom",
     avg_price: "120,000 LE",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrNG_KKB2Pk4V4jYpGQymoVcipW9k3KzlzFSzIeOPOlgaCF7Koew",
     user_id: 2
 
 },
@@ -172,7 +172,7 @@ EventService.create([
     description: "For testing",
     link: "For testing",
     avg_price: "$fortesting",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://exquisitebeauty.co.nz//nv-main/wp-content/uploads//2014/11/insert-image-here.png",
     user_id: 3
 },
 
@@ -185,7 +185,7 @@ EventService.create([
     description: "Certified from NYC make up school and been practicing for over ten years. I mainly do bridal makeup and can offer one trial before. Check out my Instagram page to see the best of my works",
     link: "https://instagram.com/kikibeautique?utm_source=ig_profile_share&igshid=1pf6iua6s557q",
     avg_price: "$700",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://weddinghubeg.com/wp-content/uploads/2017/10/Kiki-Beautique-Makeup-Artist-Wedding-Hub-EG-Cairo-Egypt.jpg",
     user_id: 3
 
 },
@@ -198,7 +198,7 @@ EventService.create([
     description: "Brand ambassador and make-up instructor for L'oreal products. My specialty is the browns for eyeshadow. You can see my style on my Instagram.",
     link: "https://instagram.com/sallyrashid_?utm_source=ig_profile_share&igshid=4johfo5591l0",
     avg_price: "$500",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://www.weddingsegypt.com/media/com_jbusinessdirectory/pictures/companies/1442/3616.jpg",
     user_id: 1
 
 },
@@ -211,7 +211,7 @@ EventService.create([
     description: "For testing",
     link: "For testing",
     avg_price: "$fortesting",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://exquisitebeauty.co.nz//nv-main/wp-content/uploads//2014/11/insert-image-here.png",
     user_id: 2
 },
 
@@ -224,7 +224,7 @@ EventService.create([
     description: "First florist in Cairo. Handles top events and is known for importing flowers which are a lot more fresh and last longer. Feel free to contact us for more information and a quote for your event.",
     link: "https://instagram.com/flowerpowerdesign?utm_source=ig_profile_share&igshid=166nbgwnyhcrs",
     avg_price: "120,000 LE",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://i2.wp.com/topinegypt.com/wp-content/uploads/2017/10/flower-power.jpg?resize=580%2C387",
     user_id: 1
 
 },
@@ -237,7 +237,7 @@ EventService.create([
     description: "Headquartered in Alexandria so most of our clients are Alexandrian. Collaborated with many venues here in Alexandria and would love to look into more events with you as needed.",
     link: "https://instagram.com/florists?utm_source=ig_profile_share&igshid=1g8yd93hgivya",
     avg_price: "80,000 LE",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://pbs.twimg.com/profile_images/769949506993590272/Vxs8mQ6R.jpg",
     user_id: 4
 
 },
@@ -249,7 +249,7 @@ EventService.create([
     description: "For testing",
     link: "For testing",
     avg_price: "$fortesting",
-    image: "http://www.cairoscene.com/Content/Admin/Uploads/EventsImages/66ed1f7d-2e9f-4e8e-82e4-bfaafe28f0e0.jpg",
+    image: "https://exquisitebeauty.co.nz//nv-main/wp-content/uploads//2014/11/insert-image-here.png",
     user_id: 3
 },
 
