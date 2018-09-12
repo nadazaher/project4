@@ -52,27 +52,16 @@ class ESbyCategory extends Component {
 
               <div className="box"
                 onClick={(e) => {
-                  // e.preventDefault();
                   console.log(service.id)
                   this.props.setEventService(service.id)
                   this.props.handleLinks('one-category-display')
-                  // this.props.handleESLink('detailed-display', this.props.currentES)
                 }}>
 
-                {/* <div>
-                <FontAwesomeIcon icon={["fas", "trash-alt"]} className="delete2" onClick={(e) => {
-                  e.preventDefault();
-                  console.log("clicked")
-                  this.props.setEventService(service.id)
-
-              this.props.deleteEventService(this.props.currentES)
-              this.props.handleLinks('one-category-display');}}
-                />
-                </div> */}
+              
                 <article className="media">
                   <div className="media-left">
                     <figure className="image is-96x96 is-left" >
-                      <img src={service.image} alt="nothing to show" />
+                      <img src={service.image} alt="Insert Here" />
                     </figure>
                   </div>
 
@@ -104,9 +93,7 @@ class ESbyCategory extends Component {
                                       e.preventDefault();
                                       console.log("editing")
                                       this.props.toggleModal('editESPage');
-                                      // this.props.setEventService(service.id)
-                                      // this.props.updateEventService(this.props.currentES)
-                                      // this.props.handleLinks('one-category-display');
+                                      
                                     }} />
                                 </span>
                               </a>

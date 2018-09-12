@@ -27,9 +27,9 @@ function Header(props) {
                       <FontAwesomeIcon icon="user" className="usericon"/>
                     </a>
                     <div className="navbar-dropdown is-right">
-                      <a className="navbar-item has-text-black"
-                        onClick={() => props.handleLinks('profile page')}> My Profile</a>
-                      <hr className="navbar-divider" />
+                      {/* <a className="navbar-item has-text-black"
+                        onClick={() => props.handleLinks('profile page')}> My Profile</a> */}
+                      {/* <hr className="navbar-divider" /> */}
                       <a className="navbar-item has-text-black"
                         onClick={() => {
                           props.handleLogout();

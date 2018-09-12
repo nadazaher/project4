@@ -15,8 +15,6 @@ class LogIn extends Component {
         this.toggle = this.toggle.bind(this);
         this.handleSubmit = this.handleChange.bind(this);
     }
-  //  do i need isLoggedIn in state
-
 
     handleChange(evt) {
         const { name, value } = evt.target;

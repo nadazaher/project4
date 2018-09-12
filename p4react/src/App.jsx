@@ -7,9 +7,8 @@ import LoggedInLandingPage from './components/LoggedInLandingPage';
 import LogIn from './components/LogIn';
 import Register from './components/Register';
 import ESbyCategory from './components/ESbyCategory';
-import DetailedES from './components/DetailedES';
 
-import { userLogin, getEventServices, getOneEvent, userRegister, saveEventService, saveComment, getComments, destroyEventService, modifyEventService } from './services/api.js';
+import { userLogin, getEventServices, getOneEvent, userRegister, saveEventService, destroyEventService, modifyEventService } from './services/api.js';
 
 class App extends Component {
   constructor() {
@@ -17,7 +16,6 @@ class App extends Component {
 
     this.state = {
       eventServices: [],
-      // comments: [],
       login_page: "modal",
       isLoggedIn: false,
       register_page: "modal",
@@ -29,7 +27,6 @@ class App extends Component {
       currentES: '',
       userInfo: null,
       oneService: ''
-      // oneComment: ''
     };
 
     this.isLoggedIn = this.isLoggedIn.bind(this)
@@ -41,21 +38,15 @@ class App extends Component {
     this.createEventService = this.createEventService.bind(this)
     this.handleLinks = this.handleLinks.bind(this)
     this.setCategory = this.setCategory.bind(this)
-    this.createComment = this.createComment.bind(this)
     this.setEventService = this.setEventService.bind(this)
     this.deleteEventService = this.deleteEventService.bind(this)
     this.updateEventService = this.updateEventService.bind(this)
     this.handleESLink = this.handleESLink.bind(this)
-    // this.showComments= this.showComments.bind(this)
   }
 
   componentDidMount() {
     getEventServices()
       .then(data => this.setState({ eventServices: data.event_services }));
-
-    // getComments()
-    // .then(data => this.setState({ comments: data.comments }));
-
 
     this.isLoggedIn()
   }
@@ -97,11 +88,6 @@ class App extends Component {
 
   }
 
-//   showComments() {
-//   getComments()
-//   .then(data => this.setState({ comments: data.comments }));
-// }
-
 
   handleChange(e) {
     this.setState({
@@ -130,20 +116,11 @@ class App extends Component {
   }
 
   createEventService(EventService) {
-    //console.log(EventService)
     saveEventService(EventService)
       .then(data => getEventServices())
       .then(data => {
         this.setState({ eventServices: data.event_services });
       });
-  }
-
-  createComment(Comment) {
-    saveComment(Comment)
-    .then(data => getComments())
-    .then(data => {
-      this.setState({ comments: data.comments });
-    });
   }
 
   handleLinks(viewName) {
@@ -221,28 +198,6 @@ class App extends Component {
           
         />;
 
-
-      case 'detailed-display':
-        return <DetailedES
-          eventServices={this.state.eventServices}
-          currentES={this.state.oneService}
-          setEventService={this.setEventService}
-          toggleModal={this.toggleModal}
-          addComment = {this.state.addComment_page}
-          userInfo={this.state.userInfo}
-          oneService={this.state.oneService}
-          createComment={this.createComment}
-          deleteEventService={this.deleteEventService}
-          handleLinks={this.handleLinks}
-          updateEventService={this.updateEventService}
-          editESPage={this.state.editESPage} 
-          showComments={this.showComments}
-          // oneComment={this.state.oneComment}
-
-
-        />;
-
-
       default:
         return <LandingPage
           toggleModal={this.toggleModal}
@@ -250,10 +205,6 @@ class App extends Component {
 
     }
   }
-
-
-
-
 
 
   render() {

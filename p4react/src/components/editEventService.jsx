@@ -78,7 +78,7 @@ class EditEventService extends Component {
                     <div className="field">
                       <p className="control is-expanded has-icons-left">
                         <input className="input" type="text" name="hostname"
-                          value={this.state.hostname} onChange={this.handleChange} 
+                          value={this.props.hostname} onChange={this.handleChange} 
                           />
                         <span className="icon is-small is-left">
                           <FontAwesomeIcon icon={["fas", "user"]} />
@@ -88,7 +88,7 @@ class EditEventService extends Component {
                     <div className="field">
                       <p className="control is-expanded has-icons-left has-icons-right">
                         <input className="input" type="text" name="email"
-                          value={this.state.email} onChange={this.handleChange} />
+                          value={this.props.email} onChange={this.handleChange} />
                         <span className="icon is-small is-left">
                           <FontAwesomeIcon icon={["fas", "envelope"]} />
                         </span>
@@ -109,7 +109,7 @@ class EditEventService extends Component {
                         </p>
                         <p className="control is-expanded">
                           <input className="input" type="text" name="telephone"
-                            value={this.state.telephone} onChange={this.handleChange} />
+                            value={this.props.telephone} onChange={this.handleChange} />
                         </p>
                       </div>
                     </div>
@@ -121,8 +121,7 @@ class EditEventService extends Component {
                   <label className="label">Type of Service</label>
                   <div className="control">
                     <div className="select">
-                      <select name="selectdropdown" value={this.state.selectdropdown} onChange={this.handleChange}>
-                        {/* <option selected>Select dropdown</option> */}
+                      <select name="selectdropdown" value={this.props.selectdropdown} onChange={this.handleChange}>
                         <option>Select Dropdown</option>
                         <option>Catering</option>
                         <option>Florist</option>
@@ -139,7 +138,7 @@ class EditEventService extends Component {
                   <label className="label">Average Price</label>
                   <div className="control">
                     <input type="text" name="avgprice" className="input"
-                      value={this.state.avgprice} onChange={this.handleChange} />
+                      value={this.props.avgprice} onChange={this.handleChange} />
                   </div>
                 </div>
 
@@ -147,7 +146,7 @@ class EditEventService extends Component {
                   <label className="label">Useful Links</label>
                   <div className="control">
                     <input type="text" name="usefullinks" className="input"
-                      value={this.state.usefullinks} onChange={this.handleChange} />
+                      value={this.props.usefullinks} onChange={this.handleChange} />
                   </div>
                 </div>
 
@@ -155,13 +154,13 @@ class EditEventService extends Component {
                   <label className="label">Description</label>
                   <div className="control">
                     <textarea className="textarea" name="description"
-                      value={this.state.description} onChange={this.handleChange} />
+                      value={this.props.description} onChange={this.handleChange} />
                   </div>
                 </div>
 
                 <div className="field">
                   <div className="control">
-                    <input type="checkbox" name="checkbox" value={this.state.checkbox} onChange={this.handleInputChange} />
+                    <input type="checkbox" name="checkbox" value={this.props.checkbox} onChange={this.handleInputChange} />
                     <label className="checkbox">
                       I agree to the <a href="www">terms and conditions</a>
                     </label>

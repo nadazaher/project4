@@ -19,7 +19,6 @@ export function saveEventService(EventService) {
     }
   };
 
-  // need ,opts for anything thats not GET 
   return fetch(`${BASE_URL}/event_services`, opts)
     .then(resp => resp.json())
     .catch(err => {
@@ -37,37 +36,6 @@ export function getOneEvent(id){
     });
 
 }
-
-
-export function getComments() {
-  const jwt = localStorage.getItem("jwt")
-  const init = {
-    headers: { "Authorization": `Bearer ${jwt}` }
-  }
-  return fetch(`${BASE_URL}/event_services`, init)
-    .then(res => res.json())
-    .catch(err => err)
-}
-
-
-
-export function saveComment(Comment) {
-  const opts = {
-    method: 'POST',
-    body: JSON.stringify(Comment),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
-
-  // need ,opts for anything thats not GET 
-  return fetch(`${BASE_URL}/event_services/:event_service_id/comments`, opts)
-    .then(resp => resp.json())
-    .catch(err => {
-      throw Error(err);
-    });
-}
-
 
 export function modifyEventService(EventService) {
   console.log("nada", EventService)

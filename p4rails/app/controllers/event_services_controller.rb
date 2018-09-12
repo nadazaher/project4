@@ -14,7 +14,6 @@ class EventServicesController < ApplicationController
       render json: { event_services: @event_services}
     end
 
-    #search and find active record - event_services.music - then
 
     def show
         id = params[:id]

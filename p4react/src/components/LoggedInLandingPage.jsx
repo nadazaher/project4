@@ -19,15 +19,7 @@ class LoggedInLandingPage extends Component {
                 },
             selectedCategory: null
         };
-
-        // this.handleChange = this.handleChange.bind(this);
-       
     }
-
-    // showCategory
-
-//funtions go here
-
 
     render () {
         return (
