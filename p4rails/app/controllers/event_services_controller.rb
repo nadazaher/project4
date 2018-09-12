@@ -35,17 +35,21 @@ class EventServicesController < ApplicationController
         end
     end
 
+
     def destroy
-        id = params[:id]
-        @event_service = EventService.find(id).destroy
-        render json: { event_service: @event_service }
+        @event_service = EventService.find(params[:id])
+        if @event_service.destroy
+            render json: {message: ("service with id: " + (params[:id]) + " deleted")}
+        else
+        render json: { message: "Error"}
+        end
     end
 
     private
 
     def event_service_params
         params.require(:event_service)
-            .permit(:type_of_service, :host, :number, :email, :description, :link, :avg_price, :user_id, :id)
+            .permit(:type_of_service, :host, :number, :email, :description, :link, :avg_price, :user_id, :id, :image)
     end
 
 end

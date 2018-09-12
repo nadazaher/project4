@@ -5,15 +5,16 @@ import EditEventService from './editEventService';
 // import ShowComments from './showComments';
 
 
-function DetailedES(props) {
+const  DetailedES = (props) => {
   return (
 
 
     <div className="ESOneContent">
       <div className="box detailed-info">
-              <FontAwesomeIcon icon={["fas", "trash"]} className="delete" onClick={() => {
+              {/* <FontAwesomeIcon icon={["fas", "trash"]} className="delete" onClick={() => {
+                window.alert("Deleted!")
               props.deleteEventService(props.currentES)
-              props.handleLinks('logged in landing');}}/>
+              props.handleLinks('logged in landing');}}/> */}
         
               <EditEventService 
               toggleModal={props.toggleModal}

@@ -216,6 +216,9 @@ class App extends Component {
           toggleModal={this.toggleModal}
           deleteEventService={this.deleteEventService}
           updateEventService={this.updateEventService}
+          userInfo={this.state.userInfo}
+          editESPage={this.state.editESPage}
+          
         />;
 
 

@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_API_URL
 
 export function getEventServices() {
   const jwt = localStorage.getItem("jwt")
@@ -88,6 +88,7 @@ export function modifyEventService(EventService) {
 
 
 export function destroyEventService(id) {
+  console.log("deleting", id)
   const opts = {
     method: 'DELETE',
     headers: {

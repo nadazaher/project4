@@ -168,8 +168,8 @@ return (
               type_of_service: this.state.selectdropdown,
               description: this.state.description,
               user_id: this.props.userInfo
-            })
-            this.props.handleLinks('landing page')
+            });
+            this.props.toggleModal('createES_page')
           }}>Create
             </button>
 

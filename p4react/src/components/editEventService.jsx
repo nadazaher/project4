@@ -123,6 +123,7 @@ class EditEventService extends Component {
                     <div className="select">
                       <select name="selectdropdown" value={this.state.selectdropdown} onChange={this.handleChange}>
                         {/* <option selected>Select dropdown</option> */}
+                        <option>Select Dropdown</option>
                         <option>Catering</option>
                         <option>Florist</option>
                         <option>Make-Up</option>
@@ -182,7 +183,7 @@ class EditEventService extends Component {
                         user_id: this.props.userInfo,
                         id: this.props.currentES.id
                       })
-                      this.props.handleLinks('landing page')
+                      this.props.toggleModal('editESPage')
                     }}>Edit
                     </button>
 
