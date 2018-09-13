@@ -71,12 +71,11 @@ render() {
     </div>    
 ```
 
-# Initial ERD
-![img_8151](https://media.git.generalassemb.ly/user/14908/files/d663c23e-b02a-11e8-8ace-a693aa95ec07)
-
-# Initial Wireframes
-![img_8939](https://media.git.generalassemb.ly/user/14908/files/ddef5626-b02a-11e8-9bfb-4c91b8dae440)
-![img_9218](https://media.git.generalassemb.ly/user/14908/files/deca52d0-b02a-11e8-968b-047756769240)
+# Screenshots
+<img width="1239" alt="screen shot 2018-09-13 at 4 05 48 pm" src="https://user-images.githubusercontent.com/39905330/45512855-06509f80-b76f-11e8-9d22-baed8b29f6d3.png">
+<img width="581" alt="screen shot 2018-09-13 at 4 05 57 pm" src="https://user-images.githubusercontent.com/39905330/45512857-06509f80-b76f-11e8-8391-e0f228211b6e.png">
+<img width="722" alt="screen shot 2018-09-13 at 4 06 07 pm" src="https://user-images.githubusercontent.com/39905330/45512858-06509f80-b76f-11e8-806f-1232389fc3d5.png">
+<img width="885" alt="screen shot 2018-09-13 at 4 06 15 pm" src="https://user-images.githubusercontent.com/39905330/45512859-06509f80-b76f-11e8-945a-b9010e0a7660.png">
 
 # Technologies Used
 - Backend: Rails
