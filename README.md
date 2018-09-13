@@ -72,7 +72,7 @@ render() {
 ```
 
 # Technologies Used
-- Backend: Rails
+- Backend: Ruby on Rails
 - Database: PSQL
 - Frontend: React
 - Auth: Knox with Bcrypt
