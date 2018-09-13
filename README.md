@@ -71,17 +71,17 @@ render() {
     </div>    
 ```
 
-# Screenshots
-<img width="1239" alt="screen shot 2018-09-13 at 4 05 48 pm" src="https://user-images.githubusercontent.com/39905330/45512855-06509f80-b76f-11e8-9d22-baed8b29f6d3.png">
-<img width="581" alt="screen shot 2018-09-13 at 4 05 57 pm" src="https://user-images.githubusercontent.com/39905330/45512857-06509f80-b76f-11e8-8391-e0f228211b6e.png">
-<img width="722" alt="screen shot 2018-09-13 at 4 06 07 pm" src="https://user-images.githubusercontent.com/39905330/45512858-06509f80-b76f-11e8-806f-1232389fc3d5.png">
-<img width="885" alt="screen shot 2018-09-13 at 4 06 15 pm" src="https://user-images.githubusercontent.com/39905330/45512859-06509f80-b76f-11e8-945a-b9010e0a7660.png">
-
 # Technologies Used
 - Backend: Rails
 - Database: PSQL
 - Frontend: React
 - Auth: Knox with Bcrypt
+
+# Screenshots
+<img width="1239" alt="screen shot 2018-09-13 at 4 05 48 pm" src="https://user-images.githubusercontent.com/39905330/45512855-06509f80-b76f-11e8-9d22-baed8b29f6d3.png">
+<img width="581" alt="screen shot 2018-09-13 at 4 05 57 pm" src="https://user-images.githubusercontent.com/39905330/45512857-06509f80-b76f-11e8-8391-e0f228211b6e.png">
+<img width="722" alt="screen shot 2018-09-13 at 4 06 07 pm" src="https://user-images.githubusercontent.com/39905330/45512858-06509f80-b76f-11e8-806f-1232389fc3d5.png">
+<img width="885" alt="screen shot 2018-09-13 at 4 06 15 pm" src="https://user-images.githubusercontent.com/39905330/45512859-06509f80-b76f-11e8-945a-b9010e0a7660.png">
 
 # Post MVP
 - As a user, I can comment/like an event service and view other people's comments/likes
