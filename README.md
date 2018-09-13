@@ -1,5 +1,7 @@
 # Event Planner Guide in Egypt
 
+Link to deployed app - http://event-services-egypt.surge.sh/
+
 # Intro
 This app will help people in Egypt create their events - mainly weddings and engagement parties. There will be a list of event servies meaning the top DJs, photographers, venues, florists, and food caterers in Egypt and users can add an event service or comment/like another event service. Each event service will have contact info, description, and pictures/links to their works. This is inspired by the fact that there are a numerous amount of events like that in Egypt and everyone pretty much uses the same few services.
 
